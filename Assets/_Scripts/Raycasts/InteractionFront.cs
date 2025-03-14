@@ -6,10 +6,22 @@ namespace GJ25.Raycasts
     {
         public float detectRayDistance = 1f;
         public Vector3 hitDir { get; private set; }
+        private PlayerBase player;
+
+        // uh oh... stinky...
+        private void Start()
+        {
+            if (player == null)
+                player = GetComponent<PlayerBase>();
+        }
 
         private void Update()
         {
-            if (CheckDirection(Vector3.forward)) hitDir = Vector3.forward;
+            Vector3 playerForward = player.transform.forward;
+            if (CheckDirection(playerForward))
+            {
+                hitDir = playerForward;
+            }
         }
 
         private bool CheckDirection(Vector3 direction)
