@@ -43,9 +43,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -100,19 +100,19 @@ TextureImporter:
       name: UIRect_0
       rect:
         serializedVersion: 2
-        x: 349
-        y: 396
-        width: 26
-        height: 47
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a4e9cfdaa2466645b5299f42c8016e2
+      spriteID: c475dbbc3df08c64b91b20e0b57d4173
       internalID: -1863023499
       vertices: []
       indices: 
@@ -122,30 +122,38 @@ TextureImporter:
       name: UIRect_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 393
-        width: 128
-        height: 119
+        x: 35
+        y: 34
+        width: 443
+        height: 444
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 893346854db2c444f9d97f7da6bb8906
+      spriteID: 083d6e3e3e2cf56458816c6f6272ab16
       internalID: 1874245229
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: 256, y: 256}
+      - {x: -256, y: 256}
+      - {x: -256, y: -256}
+      - {x: 256, y: -256}
+    - - {x: -221, y: -221}
+      - {x: -221, y: 221}
+      - {x: 221, y: 221}
+      - {x: 221, y: -221}
     customData: 
     physicsShape: []
     bones: []
     spriteID: 063276e37b254c4429157e34c6bc8123
-    internalID: 0
+    internalID: -1801808183
     vertices: []
     indices: 
     edges: []
@@ -156,6 +164,7 @@ TextureImporter:
     nameFileIdTable:
       UIRect_0: -1863023499
       UIRect_1: 1874245229
+      UIRect_2: 1247792404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
