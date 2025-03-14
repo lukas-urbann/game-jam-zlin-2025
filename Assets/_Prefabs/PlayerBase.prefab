@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6673922003603483801}
   - component: {fileID: 7898703639910328375}
   - component: {fileID: 1000109505353707567}
+  - component: {fileID: 4644688522277766699}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: Untagged
@@ -244,6 +245,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172b2c8e45f65e343bd4087481d3da4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRayDistance: 1
+--- !u!114 &4644688522277766699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123224318111074878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ec03806b0a2c74cb6f22b66a8a82e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detectRayDistance: 1

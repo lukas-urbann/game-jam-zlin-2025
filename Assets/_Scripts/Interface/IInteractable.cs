@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface IInteractable
+namespace GJ25.Interface
 {
-    void Interact();
+    public interface IInteractable
+    {
+        void Interact();
+    }
 }
