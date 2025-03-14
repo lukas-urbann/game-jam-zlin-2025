@@ -18,6 +18,8 @@ public class PlayerBase : MonoBehaviour
 
     private void Update()
     {
+        RotateToTarget();
+
         switch (currentState)
         {
             case PlayerState.Idle:
@@ -26,7 +28,6 @@ public class PlayerBase : MonoBehaviour
 
             case PlayerState.Moving:
                 MoveToTargetNode();
-                RotateToTarget();
                 break;
         }
     }
