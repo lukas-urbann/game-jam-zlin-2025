@@ -45,9 +45,9 @@ public class PlayerBase : MonoBehaviour
         int dx = 0, dy = 0;
 
         if(Input.GetKeyDown(_controls.up)) dy = 1;
-        if(Input.GetKeyDown(_controls.down)) dy = -1;
-        if(Input.GetKeyDown(_controls.left)) dx = -1;
-        if (Input.GetKeyDown(_controls.right)) dx = 1;
+        else if(Input.GetKeyDown(_controls.down)) dy = -1;
+        else if(Input.GetKeyDown(_controls.left)) dx = -1;
+        else if (Input.GetKeyDown(_controls.right)) dx = 1;
 
         if (dx != 0 || dy != 0)
         {
