@@ -122,8 +122,8 @@ GameObject:
   - component: {fileID: 2954916620781597434}
   - component: {fileID: 6673922003603483801}
   - component: {fileID: 7898703639910328375}
-  - component: {fileID: 1000109505353707567}
   - component: {fileID: 4644688522277766699}
+  - component: {fileID: 1890238799122646066}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: Untagged
@@ -236,19 +236,7 @@ MonoBehaviour:
   currentNode: {fileID: 0}
   moveSpeed: 5
   rotSpeed: 10
---- !u!114 &1000109505353707567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3123224318111074878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172b2c8e45f65e343bd4087481d3da4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectRayDistance: 1
+  controls: {fileID: 0}
 --- !u!114 &4644688522277766699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +250,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectRayDistance: 1
+--- !u!114 &1890238799122646066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123224318111074878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3ac549e9287cb4f9ec167da504f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: 0
+  left: 0
+  right: 0
+  down: 0
+  interact: 0
 --- !u!1 &9144234041445103210
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +280,7 @@ GameObject:
   - component: {fileID: 2550228205381607990}
   - component: {fileID: 470000292511102281}
   m_Layer: 0
-  m_Name: w
+  m_Name: fronts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
