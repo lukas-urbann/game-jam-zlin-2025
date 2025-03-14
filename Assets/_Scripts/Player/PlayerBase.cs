@@ -13,6 +13,8 @@ public class PlayerBase : MonoBehaviour
     public GridNode currentNode;
     private GridNode targetNode;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float rotSpeed = 20f;
+    private Quaternion targetRotation;
 
     private void Update()
     {
@@ -24,6 +26,7 @@ public class PlayerBase : MonoBehaviour
 
             case PlayerState.Moving:
                 MoveToTargetNode();
+                RotateToTarget();
                 break;
         }
     }
@@ -47,6 +50,9 @@ public class PlayerBase : MonoBehaviour
             {
                 targetNode = GridSystem.Instance.Grid[newX, newY];
                 currentState = PlayerState.Moving;
+                
+                Vector3 direction = (targetNode.WorldPosition - transform.position).normalized;
+                targetRotation = Quaternion.LookRotation(direction);
 
                 // Update grid occupancy
                 GridSystem.Instance.Grid[currentNode.GridX, currentNode.GridY].OccupyingObject = null;
@@ -69,5 +75,14 @@ public class PlayerBase : MonoBehaviour
             currentNode = targetNode;
             currentState = PlayerState.Idle;
         }
+    }
+    
+    private void RotateToTarget()
+    {
+        transform.rotation = Quaternion.Lerp(
+            transform.rotation,
+            targetRotation,
+            rotSpeed * Time.deltaTime
+        );
     }
 }
