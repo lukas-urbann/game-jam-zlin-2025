@@ -3,7 +3,6 @@ using UnityEngine;
 public class GridNode : MonoBehaviour
 {
     public Vector3 WorldPosition { get; private set; }
-    public bool IsObstacle { get; set; }
     public GameObject OccupyingObject { get; set; }
 
     public int GridX { get; private set; }
@@ -14,7 +13,6 @@ public class GridNode : MonoBehaviour
         WorldPosition = worldPos;
         GridX = gridX;
         GridY = gridY;
-        IsObstacle = false;
         OccupyingObject = null;
     }
 }

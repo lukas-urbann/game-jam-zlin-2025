@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class SpawnSystem : MonoBehaviour
 {
-    //GridSystem.Instance.Grid.GetLength(0); - x
-    //GridSystem.Instance.Grid.GetLength(1); - z
-        
     public GameObject wall;
+    public GameObject player;
 
     private void OnEnable()
     {
@@ -17,18 +15,22 @@ public class SpawnSystem : MonoBehaviour
         GridSystem.Instance.onGridSpawned.RemoveListener(SpawnWalls);
     }
 
-    private void Start()
-    {
-        SpawnWalls();
-    }
-
     private void SpawnWalls()
     {
         foreach (var node in GridSystem.Instance.Grid)
         {
-            if (node.GridX == 0 || node.GridY == 0 || node.GridX == GridSystem.Instance.GridXLength || node.GridY == GridSystem.Instance.GridZLength)
+            if (node.GridX == 0 ||
+                node.GridY == 0 ||
+                node.GridX == GridSystem.Instance.GridXLength ||
+                node.GridY == GridSystem.Instance.GridZLength)
             {
-                Instantiate(wall, node.WorldPosition, Quaternion.identity);
+                node.OccupyingObject = Instantiate(wall, node.WorldPosition, Quaternion.identity);
+            }
+
+            if (node.GridX == 1 && node.GridY == 1)
+            {
+                node.OccupyingObject = Instantiate(player, node.WorldPosition, Quaternion.identity);
+                node.OccupyingObject.GetComponent<PlayerBase>().currentNode = node;
             }
         }
     }

@@ -152,7 +152,10 @@ MonoBehaviour:
   gridVisualisation: {fileID: 115882244447011129, guid: c52d3affba454e1469e8819f26f33206, type: 3}
   gridWidth: 16
   gridHeight: 10
-  nodeSize: 1
+  nodeDistance: 1
+  onGridSpawned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &121391858
 Transform:
   m_ObjectHideFlags: 0
@@ -213,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 5116590539248893500, guid: 6c448d73b8d85ed4491b25dab9f36f61, type: 3}
+  player: {fileID: 3123224318111074878, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
 --- !u!1 &908183945
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +607,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -636,7 +640,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
