@@ -6,7 +6,8 @@ namespace GJ25.Systems
     public class SpawnSystem : MonoBehaviour
     {
         public GameObject wall;
-        public GameObject player;
+        public GameObject redPlayer;
+        public GameObject bluePlayer;
 
         private void OnEnable()
         {
@@ -32,7 +33,13 @@ namespace GJ25.Systems
 
                 if (node.GridX == 1 && node.GridY == 1)
                 {
-                    node.OccupyingObject = Instantiate(player, node.WorldPosition, Quaternion.identity);
+                    node.OccupyingObject = Instantiate(redPlayer, node.WorldPosition, Quaternion.identity);
+                    node.OccupyingObject.GetComponent<PlayerBase>().currentNode = node;
+                }
+
+                if (node.GridX == GridSystem.Instance.GridXLength-1 && node.GridY == GridSystem.Instance.GridZLength-1)
+                {
+                    node.OccupyingObject = Instantiate(bluePlayer, node.WorldPosition, Quaternion.identity);
                     node.OccupyingObject.GetComponent<PlayerBase>().currentNode = node;
                 }
             }
