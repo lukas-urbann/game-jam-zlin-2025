@@ -1,8 +1,9 @@
 using GJ25.Player;
+using UnityEngine;
 
 namespace GJ25.Interactables
 {
-    public class Chair : InteractableObjectBase
+    public class Pizza : InteractableObjectBase
     {
         public void Interaction(PlayerBase player)
         {
@@ -10,3 +11,4 @@ namespace GJ25.Interactables
         }
     }
 }
+

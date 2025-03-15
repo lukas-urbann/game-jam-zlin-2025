@@ -19,6 +19,8 @@ namespace GJ25.Player
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float rotSpeed = 20f;
         
+        public PlayerComputer computer;
+        
         #region Private
         private GridNode _targetNode;
         private Quaternion _targetRotation;
@@ -29,7 +31,7 @@ namespace GJ25.Player
         #endregion
         
         public UnityEvent onInteractPerformed = new();
-
+        
         private void OnEnable()
         {
             PlayerQuery.players.Add(this);
