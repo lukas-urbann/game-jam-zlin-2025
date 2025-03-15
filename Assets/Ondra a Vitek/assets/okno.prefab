@@ -80,9 +80,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6144042983376105995, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6144042983376105995, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d6966d3d1fbb66468d69f00f6d7cc45, type: 2}
+    - target: {fileID: -4864821063963694042, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
       propertyPath: m_Name
       value: okno
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764075433138160334, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764075433138160334, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d6966d3d1fbb66468d69f00f6d7cc45, type: 2}
+    - target: {fileID: 1957819986760629781, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128355837191441527, guid: e1981c12d5c92c745a5326adecba918f, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
