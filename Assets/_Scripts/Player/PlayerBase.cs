@@ -14,26 +14,22 @@ namespace GJ25.Player
     {
         private ObjectState _currentState = ObjectState.Idle;
         public ObjectState State { get { return _currentState; } }
-
-        private GridNode _targetNode;
+        public float InitialSpeed => _initialSpeed;
+        
         [SerializeField] private float moveSpeed = 5f;
-
-        public float DefaultMoveSpeed = 5;
-
         [SerializeField] private float rotSpeed = 20f;
+
+        #region Private
+        private GridNode _targetNode;
         private Quaternion _targetRotation;
-
         private PlayerControls _controls;
-        private GridObject _currentNode;
-
         private float _initialSpeed;
-
+        private GridObject _currentNode;
+        private Animator _animator;
+        #endregion
+        
         public UnityEvent onInteractPerformed = new();
 
-        private Animator _animator;
-        
-        public Vector2 _currentRotation = Vector2.zero;
-        
         private void OnEnable()
         {
             if (TryGetComponent(out GridObject go)) _currentNode = go;
@@ -80,24 +76,20 @@ namespace GJ25.Player
             
             if (dx != 0 || dy != 0)
             {
-                _currentRotation = new Vector2(dx, dy);
-                
                 int newX = _currentNode.GetGridNode().GridX + dx;
                 int newY = _currentNode.GetGridNode().GridY + dy;
 
+                _targetNode = GridSystem.Instance.Grid[newX, newY];
+                Vector3 direction = (_targetNode.WorldPosition - transform.position).normalized;
+                _targetRotation = Quaternion.LookRotation(direction);
+                
                 // Check if valid move
-                if (GridSystem.Instance.Grid[newX, newY].OccupyingObject == null)
-                {
-                    _targetNode = GridSystem.Instance.Grid[newX, newY];
-                    _currentState = ObjectState.Moving;
+                if (GridSystem.Instance.Grid[newX, newY].OccupyingObject != null) return;
+                _currentState = ObjectState.Moving;
                     
-                    Vector3 direction = (_targetNode.WorldPosition - transform.position).normalized;
-                    _targetRotation = Quaternion.LookRotation(direction);
-
-                    // Update grid occupancy
-                    GridSystem.Instance.Grid[_currentNode.GetGridNode().GridX, _currentNode.GetGridNode().GridY].OccupyingObject = null;
-                    GridSystem.Instance.Grid[_targetNode.GridX, _targetNode.GridY].OccupyingObject = gameObject;
-                }
+                // Update grid occupancy
+                GridSystem.Instance.Grid[_currentNode.GetGridNode().GridX, _currentNode.GetGridNode().GridY].OccupyingObject = null;
+                GridSystem.Instance.Grid[_targetNode.GridX, _targetNode.GridY].OccupyingObject = gameObject;
             }
         }
 

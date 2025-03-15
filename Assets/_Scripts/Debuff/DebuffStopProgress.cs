@@ -1,6 +1,3 @@
-using UnityEngine;
-using GJ25.Player;
-
 public class DebuffStopProgress : DebuffBase
 {
     private PlayerProgress _targetProgress;

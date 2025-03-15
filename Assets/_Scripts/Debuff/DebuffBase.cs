@@ -6,10 +6,10 @@ public abstract class DebuffBase : MonoBehaviour
     [SerializeField] protected float duration = 3f;
     [SerializeField] protected float cooldown = 10f;
     [SerializeField] protected bool isActive;
+    [SerializeField] protected bool isOnCooldown;
     protected PlayerBase targetPlayer;
-    protected bool isOnCooldown;
     
-    public virtual void ApplyDebuff(PlayerBase target)
+    public void ApplyDebuff(PlayerBase target)
     {
         targetPlayer = target;
         isActive = true;
@@ -22,7 +22,7 @@ public abstract class DebuffBase : MonoBehaviour
         Debug.Log($"{target.name}, {GetType().Name}, {duration}");
     }
 
-    protected virtual void RemoveDebuff()
+    protected void RemoveDebuff()
     {
         OnDebuffRemoved();
         isActive = false;
@@ -37,5 +37,4 @@ public abstract class DebuffBase : MonoBehaviour
 
     protected abstract void OnDebuffApplied();
     protected abstract void OnDebuffRemoved();
-    
 }
