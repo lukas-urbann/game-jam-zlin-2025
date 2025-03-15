@@ -1,3 +1,4 @@
+using GJ25.Player;
 using UnityEngine;
 
 public abstract class DebuffBase : MonoBehaviour

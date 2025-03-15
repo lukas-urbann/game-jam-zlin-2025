@@ -1,28 +1,14 @@
-using GJ25.Interface;
+using GJ25.Player;
 using UnityEngine;
 
 namespace GJ25.Interactables
 {
-    public class Chair : MonoBehaviour, IInteractable
+    public class Chair : MonoBehaviour
     {
-        public void Interact()
+        
+        public void MoveInDirection(PlayerBase player)
         {
-            Debug.Log($"{gameObject.name} interact");
-        }
-
-        public void InteractHoverShow()
-        {
-            Debug.Log($"{gameObject.name} show");
-        }
-
-        public void InteractHoverStay()
-        {
-            Debug.Log($"{gameObject.name} stay");
-        }
-
-        public void InteractHoverHide()
-        {
-            Debug.Log($"{gameObject.name} hide");
+            
         }
     }
 }

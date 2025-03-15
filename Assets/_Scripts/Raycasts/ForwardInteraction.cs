@@ -1,5 +1,6 @@
 using UnityEngine;
 using GJ25.Interface;
+using GJ25.Player;
 
 namespace GJ25.Raycasts
 {
@@ -14,7 +15,7 @@ namespace GJ25.Raycasts
 
         public void InteractPerformed()
         {
-            hitInteractable?.Interact();
+            hitInteractable?.Interact(this.player);
         }
         
         private void OnEnable()
@@ -34,13 +35,13 @@ namespace GJ25.Raycasts
 
         private void CheckDirection(Vector3 direction)
         {
-            if (player.State == PlayerBase.PlayerState.Moving) return;
+            if (player.State == ObjectState.Moving) return;
             
             Ray ray = new(transform.position, direction);
 
             if (!Physics.Raycast(ray, out RaycastHit hit, detectRayDistance))
             {
-                hitInteractable?.InteractHoverHide();
+                hitInteractable?.InteractHoverHide(this.player);
                 hitInteractable = null;
                 return;
             }
@@ -49,13 +50,13 @@ namespace GJ25.Raycasts
             {
                 if (interactable != hitInteractable)
                 {
-                    hitInteractable?.InteractHoverHide();
+                    hitInteractable?.InteractHoverHide(this.player);
                     hitInteractable = interactable;
-                    hitInteractable?.InteractHoverShow();
+                    hitInteractable?.InteractHoverShow(this.player);
                 }
                 else
                 {
-                    hitInteractable?.InteractHoverStay();
+                    hitInteractable?.InteractHoverStay(this.player);
                 }
             }
         }
