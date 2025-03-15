@@ -36,4 +36,5 @@ public abstract class DebuffBase : MonoBehaviour
 
     protected abstract void OnDebuffApplied();
     protected abstract void OnDebuffRemoved();
+    
 }
