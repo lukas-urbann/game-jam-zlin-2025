@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using GJ25.Grid;
 using UnityEngine.Events;
@@ -18,7 +19,7 @@ namespace GJ25.Player
         
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float rotSpeed = 20f;
-
+        
         #region Private
         private GridNode _targetNode;
         private Quaternion _targetRotation;
@@ -32,11 +33,13 @@ namespace GJ25.Player
 
         private void OnEnable()
         {
+            PlayerQuery.players.Add(this);
+            
             if (TryGetComponent(out GridObject go)) _currentNode = go;
             if (TryGetComponent(out PlayerControls ct)) _controls = ct;
             if (TryGetComponent(out Animator anim)) _animator = anim;
         }
-
+        
         private void Start()
         {
             _initialSpeed = moveSpeed;
