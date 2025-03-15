@@ -6,34 +6,38 @@ namespace GJ25.Raycasts
     public class ForwardInteraction : MonoBehaviour
     {
         private PlayerBase player;
-        
-        public float detectRayDistance = 1f;
-        public Vector3 hitDir { get; private set; }
+        private Vector3 playerForward;
 
+        public float detectRayDistance = 1f;
 
         private void OnEnable()
         {
             if (TryGetComponent(out PlayerBase player)) this.player = player;
         }
 
+        private void Update()
+        {
+            playerForward = player.transform.forward;
+        }
+
         private void FixedUpdate()
         {
-            Vector3 playerForward = player.transform.forward;
-            if (CheckDirection(playerForward))
+            if (CheckDirection(playerForward, out GameObject hitGo))
             {
-                hitDir = playerForward;
+                Debug.Log(hitGo.name);
             }
         }
 
-        private bool CheckDirection(Vector3 direction)
+        private bool CheckDirection(Vector3 direction, out GameObject hitGo)
         {
+            hitGo = null;
+            if (player.State == PlayerBase.PlayerState.Moving) return false;
+
             Ray ray = new(transform.position, direction);
             Debug.DrawRay(transform.position, direction * detectRayDistance, Color.red);
 
             if (Physics.Raycast(ray, out RaycastHit hit, detectRayDistance))
             {
-                if (player.State == PlayerBase.PlayerState.Moving) return false;
-
                 if (hit.collider.TryGetComponent(out IInteractable interactable))
                 {
                     Debug.DrawRay(transform.position, direction * detectRayDistance, Color.green);
