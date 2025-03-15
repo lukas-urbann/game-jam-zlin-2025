@@ -285,6 +285,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &71335985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 888224410800862832, guid: 92b58c006604df14bb04034c693896b3, type: 3}
+  m_PrefabInstance: {fileID: 1261711662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &418432998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,6 +469,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1276378043628184436, guid: 01cef36b00a70864484e36f43a9fb2ef, type: 3}
+      propertyPath: loadBar
+      value: 
+      objectReference: {fileID: 71335985}
+    - target: {fileID: 1276378043628184436, guid: 01cef36b00a70864484e36f43a9fb2ef, type: 3}
+      propertyPath: loadBarFill
+      value: 
+      objectReference: {fileID: 1984132534}
+    - target: {fileID: 1276378043628184436, guid: 01cef36b00a70864484e36f43a9fb2ef, type: 3}
+      propertyPath: modelObject
+      value: 
+      objectReference: {fileID: 1766042584}
     - target: {fileID: 1947634608632659502, guid: 01cef36b00a70864484e36f43a9fb2ef, type: 3}
       propertyPath: m_Name
       value: Toilet
@@ -1340,6 +1357,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e427f2593e960004c9b7e618bc6e9eee, type: 3}
+--- !u!1 &1766042584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2141051491990717626, guid: 92b58c006604df14bb04034c693896b3, type: 3}
+  m_PrefabInstance: {fileID: 1261711662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1785610700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1511,6 +1533,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68fb984abd0e943438c75b6576183d28, type: 3}
+--- !u!114 &1984132534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8961284931930585331, guid: 92b58c006604df14bb04034c693896b3, type: 3}
+  m_PrefabInstance: {fileID: 1261711662}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2064893098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1614,10 +1647,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1178424477791220154, guid: cc39a274d80a35346a54953e3f1f7e14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2830165242128328431, guid: cc39a274d80a35346a54953e3f1f7e14, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5513989564261359180, guid: cc39a274d80a35346a54953e3f1f7e14, type: 3}

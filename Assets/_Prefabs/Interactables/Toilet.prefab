@@ -84,7 +84,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.y
@@ -92,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalRotation.w
@@ -124,7 +124,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_Name
-      value: Toilet Variant
+      value: Toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878013244752176110, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878013244752176110, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878013244752176110, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6855345
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6855345
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6855345
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8376122040022608062, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
@@ -155,9 +179,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdc3719c643c9a40925f722ddb239f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelObject: {fileID: 0}
+  loadBar: {fileID: 0}
+  loadBarFill: {fileID: 0}
+  cooldown: 10
   onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1276378043628184436}
+        m_TargetAssemblyTypeName: GJ25.Interactables.InteractableObjectBase, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onInteractHoverShow:
     m_PersistentCalls:
       m_Calls: []

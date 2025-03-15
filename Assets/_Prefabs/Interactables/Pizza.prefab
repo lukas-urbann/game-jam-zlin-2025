@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_Name
-      value: Pizza Variant
+      value: Pizza
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8376122040022608062, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
@@ -64,11 +64,27 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4510211465042125193}
   m_SourcePrefab: {fileID: 100100000, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+--- !u!1 &1547244626043347017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 714769617441813376, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+  m_PrefabInstance: {fileID: 2059189446505288649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2478303956994602780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
   m_PrefabInstance: {fileID: 2059189446505288649}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7311471424314011338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+  m_PrefabInstance: {fileID: 2059189446505288649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9132049674273233130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
@@ -86,9 +102,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92b34cf95f46c4428640094f74c1587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelObject: {fileID: 9030451353861303557}
+  loadBar: {fileID: 1547244626043347017}
+  loadBarFill: {fileID: 7311471424314011338}
+  cooldown: 10
   onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4510211465042125193}
+        m_TargetAssemblyTypeName: GJ25.Interactables.InteractableObjectBase, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onInteractHoverShow:
     m_PersistentCalls:
       m_Calls: []
@@ -158,5 +190,10 @@ PrefabInstance:
 --- !u!4 &171606163733227271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3406539866695416859, guid: ad634418cb3082841b0aa7cfbba2226f, type: 3}
+  m_PrefabInstance: {fileID: 3253814516768578332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9030451353861303557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5797615658570692121, guid: ad634418cb3082841b0aa7cfbba2226f, type: 3}
   m_PrefabInstance: {fileID: 3253814516768578332}
   m_PrefabAsset: {fileID: 0}

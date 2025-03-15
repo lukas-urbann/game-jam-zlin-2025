@@ -4,7 +4,7 @@ namespace GJ25.Interactables
 {
     public class PowerSupply : InteractableObjectBase
     {
-        public void Interaction(PlayerBase player)
+        public override void ExtendedInteraction(PlayerBase player)
         {
             
         }

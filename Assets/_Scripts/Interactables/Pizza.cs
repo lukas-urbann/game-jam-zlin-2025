@@ -5,7 +5,7 @@ namespace GJ25.Interactables
 {
     public class Pizza : InteractableObjectBase
     {
-        public void Interaction(PlayerBase player)
+        public override void ExtendedInteraction(PlayerBase player)
         {
             
         }
