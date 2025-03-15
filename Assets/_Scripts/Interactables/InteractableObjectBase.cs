@@ -34,13 +34,17 @@ namespace GJ25.Interactables
 
         private IEnumerator WaitForLoadBar()
         {
-            float startFill = loadBarFill.fillAmount;
+            float startFill = 0;
+            if (loadBarFill)
+            {
+                startFill = loadBarFill.fillAmount;
+            }
             float elapsed = 0f;
 
             while (elapsed < cooldown)
             {
                 elapsed += Time.deltaTime;
-                loadBarFill.fillAmount = Mathf.Lerp(startFill, 1, elapsed / cooldown);
+                if (loadBarFill) loadBarFill.fillAmount = Mathf.Lerp(startFill, 1, elapsed / cooldown);
                 yield return null;
             }
         }
@@ -48,7 +52,7 @@ namespace GJ25.Interactables
         protected void EnableInteractable()
         {
             CanInteract = true;
-            loadBarFill.fillAmount = 1;
+            if (loadBarFill) loadBarFill.fillAmount = 1;
             modelObject?.SetActive(true);
             loadBar?.SetActive(false);
             DisableHoverAnimation(null);
@@ -57,12 +61,12 @@ namespace GJ25.Interactables
         protected void DisableInteractable()
         {
             CanInteract = false;
-            loadBarFill.fillAmount = 0;
+            if (loadBarFill) loadBarFill.fillAmount = 0;
             modelObject?.SetActive(false);
             loadBar?.SetActive(true);
         }
         
-        private Animator _animator;
+        [SerializeField] private Animator _animator;
 
         private void EnableHoverAnimation(object _) => _animator.SetBool("hover", true);
             

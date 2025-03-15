@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using GJ25.Debuff;
 using UnityEngine;
 using GJ25.Grid;
 using UnityEngine.Events;
@@ -20,6 +22,10 @@ namespace GJ25.Player
         [SerializeField] private float rotSpeed = 20f;
         
         public PlayerComputer computer;
+        
+        public int dx = 0, dy = 0;
+        
+        private List<EffectBase> activeEffects = new List<EffectBase>();
         
         #region Private
         private GridNode _targetNode;
@@ -48,6 +54,23 @@ namespace GJ25.Player
 
         private void Update()
         {
+            CheckStates();
+            CheckEffects();
+        }
+
+        private void CheckEffects()
+        {
+            for (int i = activeEffects.Count - 1; i >= 0; i--)
+            {
+                if (activeEffects[i].UpdateDebuff(Time.deltaTime))
+                {
+                    activeEffects.RemoveAt(i);
+                }
+            }
+        }
+
+        private void CheckStates()
+        {
             switch (_currentState)
             {
                 case ObjectState.Idle:
@@ -61,6 +84,12 @@ namespace GJ25.Player
                     break;
             }
         }
+        
+        public void AddDebuff(EffectBase effect)
+        {
+            effect.ApplyEffect();
+            activeEffects.Add(effect);
+        }
 
         private void FixedUpdate()
         {
@@ -69,7 +98,8 @@ namespace GJ25.Player
             
         private void CheckForMovementInput()
         {
-            int dx = 0, dy = 0;
+            dx = 0;
+            dy = 0;
 
             if(Input.GetKey(_controls.up)) dy = 1;
             else if(Input.GetKey(_controls.down)) dy = -1;
