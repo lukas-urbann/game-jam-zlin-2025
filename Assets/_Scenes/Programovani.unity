@@ -2467,6 +2467,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f76494b1613cbd14f9a3139705d5c624, type: 3}
+--- !u!1 &1344633388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344633390}
+  - component: {fileID: 1344633389}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1344633389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344633388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281679e72bdc2874a834f40194f01787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Test
+    clip: {fileID: 8300000, guid: a0cce1696915c0547987c808643c46f1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bgm
+    clip: {fileID: 8300000, guid: 99483d0ed831328449e4426da159d138, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+--- !u!4 &1344633390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344633388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1464302523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2529,6 +2586,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2168231784163401246, guid: 5a605b9a9e50b4a4286c8645b6cfe25f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1464302526}
+    - targetCorrespondingSourceObject: {fileID: 2168231784163401246, guid: 5a605b9a9e50b4a4286c8645b6cfe25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1464302530}
+    - targetCorrespondingSourceObject: {fileID: 2168231784163401246, guid: 5a605b9a9e50b4a4286c8645b6cfe25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1464302531}
   m_SourcePrefab: {fileID: 100100000, guid: 5a605b9a9e50b4a4286c8645b6cfe25f, type: 3}
 --- !u!1 &1464302524 stripped
 GameObject:
@@ -2555,13 +2618,13 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1464302531}
+        m_TargetAssemblyTypeName: GJ25.Interactables.SlowObject, Assembly-CSharp
+        m_MethodName: OnSlowInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2576,6 +2639,53 @@ MonoBehaviour:
   onInteractHoverHide:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1464302530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464302524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fef6e769cf0234b9475bc98ff6da70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  cooldown: 10
+  isActive: 0
+  isOnCooldown: 0
+  slowMultiplier: 0.5
+--- !u!114 &1464302531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464302524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d3d95a5d2295641b034dc03b22160e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  onInteractHoverShow:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  onInteractHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  onInteractHoverHide:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  slowDebuff: {fileID: 0}
 --- !u!1001 &1507740366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3402,6 +3512,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1860902347}
+    - targetCorrespondingSourceObject: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1860902351}
   m_SourcePrefab: {fileID: 100100000, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
 --- !u!1 &1860902344 stripped
 GameObject:
@@ -3435,8 +3548,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1860902347}
         m_TargetAssemblyTypeName: GJ25.Interactables.Chair, Assembly-CSharp
-        m_MethodName: TestChair
-        m_Mode: 0
+        m_MethodName: Test
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3445,6 +3558,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractHoverShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractHoverHide:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1860902351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860902344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0b0608415bd7b4d806c204f9cb70c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
   onInteractHoverShow:
     m_PersistentCalls:
       m_Calls: []
@@ -4183,6 +4320,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1344633390}
   - {fileID: 1802074633}
   - {fileID: 1860902343}
   - {fileID: 222174878}
