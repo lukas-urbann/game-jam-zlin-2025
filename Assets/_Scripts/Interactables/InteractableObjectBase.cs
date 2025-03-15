@@ -8,6 +8,9 @@ namespace GJ25.Interactables
 {
     public class InteractableObjectBase : MonoBehaviour, IInteractable
     {
+        //PlayerBase otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != playerBase);
+        //if(otherPlayer != null) Debug.Log($"Applying debuff from {playerBase.name} to: {otherPlayer.name}");
+        
         private Animator _animator;
 
         private void EnableHoverAnimation(object _) => _animator.SetBool("hover", true);
