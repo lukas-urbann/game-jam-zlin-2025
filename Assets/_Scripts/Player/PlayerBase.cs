@@ -1,6 +1,7 @@
 using UnityEngine;
 using GJ25.Grid;
 using GJ25.Player;
+using UnityEngine.Events;
 
 public class PlayerBase : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerBase : MonoBehaviour
     private GridObject _currentNode;
 
     private float _initialSpeed;
+
+    public UnityEvent onInteractPerformed = new();
 
     private void OnEnable()
     {
@@ -55,8 +58,8 @@ public class PlayerBase : MonoBehaviour
     {
         RotateToTarget();
     }
-
-    void CheckForMovementInput()
+        
+    private void CheckForMovementInput()
     {
         int dx = 0, dy = 0;
 
@@ -65,6 +68,8 @@ public class PlayerBase : MonoBehaviour
         else if(Input.GetKey(_controls.left)) dx = -1;
         else if (Input.GetKey(_controls.right)) dx = 1;
 
+        if (Input.GetKeyDown(_controls.interact)) onInteractPerformed?.Invoke();
+        
         if (dx != 0 || dy != 0)
         {
             int newX = _currentNode.GetGridNode().GridX + dx;
@@ -110,12 +115,10 @@ public class PlayerBase : MonoBehaviour
             rotSpeed * Time.deltaTime
         );
     }
-    
 
     public void SetSpeed(float multiplier)
     {
         moveSpeed = _initialSpeed * multiplier;
     }
-    
 }
 

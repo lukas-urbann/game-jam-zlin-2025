@@ -9,5 +9,20 @@ namespace GJ25.Workstation
         {
             Debug.Log("Interakce");
         }
+
+        public void InteractHoverShow()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void InteractHoverStay()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void InteractHoverHide()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
