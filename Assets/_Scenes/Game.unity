@@ -213,9 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764d3b45a66c1d94a9feafbed236d337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 5116590539248893500, guid: 6c448d73b8d85ed4491b25dab9f36f61, type: 3}
-  redPlayer: {fileID: 2461198597403252321, guid: f9da27cae26f64448b17179f4b88764a, type: 3}
-  bluePlayer: {fileID: 5022363874935326001, guid: 87eff9fc0ec467046bd2b50e9dd2d14b, type: 3}
+  wallPrefab: {fileID: 5116590539248893500, guid: 6c448d73b8d85ed4491b25dab9f36f61, type: 3}
 --- !u!1 &908183945
 GameObject:
   m_ObjectHideFlags: 0

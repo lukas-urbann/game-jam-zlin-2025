@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -53,6 +55,13 @@ namespace GJ25.Grid
                     gameGrid[x, z] = new GridNode(worldPosition, x, z);
                 }
             }
+
+            StartCoroutine(DelayedInvoke());
+        }
+
+        private IEnumerator DelayedInvoke()
+        {
+            yield return new WaitForEndOfFrame();
             onGridSpawned?.Invoke();
         }
 
@@ -65,6 +74,27 @@ namespace GJ25.Grid
             y = Mathf.Clamp(y, 0, gridHeight - 1);
 
             return gameGrid[x, y];
+        }
+
+        public List<GridNode> GetAllBorderNodes()
+        {
+            List<GridNode> borderNodes = new List<GridNode>();
+        
+            // horni a dolni
+            for (int x = 0; x < gridWidth; x++)
+            {
+                borderNodes.Add(gameGrid[x, 0]);
+                borderNodes.Add(gameGrid[x, gridHeight - 1]);
+            }
+        
+            // leva a prava
+            for (int y = 1; y < gridHeight - 1; y++)
+            {
+                borderNodes.Add(gameGrid[0, y]);
+                borderNodes.Add(gameGrid[gridWidth - 1, y]);
+            }
+        
+            return borderNodes;
         }
     }
 }
