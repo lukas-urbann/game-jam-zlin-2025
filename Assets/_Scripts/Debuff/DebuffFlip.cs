@@ -1,22 +1,23 @@
-using UnityEngine;
 using GJ25.Player;
 
-public class DebuffFlip : DebuffBase
+namespace GJ25.Debuff
 {
-
-    protected override void OnDebuffApplied()
+    public class DebuffFlip : DebuffBase
     {
-        if (targetPlayer != null && targetPlayer.TryGetComponent(out PlayerControls opponentControls))
+        protected override void OnDebuffApplied()
         {
-            opponentControls.FlipControls(true);
+            if (targetPlayer != null && targetPlayer.TryGetComponent(out PlayerControls opponentControls))
+            {
+                opponentControls.FlipControls(true);
+            }
         }
-    }
 
-    protected override void OnDebuffRemoved()
-    {
-        if (targetPlayer != null && targetPlayer.TryGetComponent(out PlayerControls opponentControls))
+        protected override void OnDebuffRemoved()
         {
-            opponentControls.FlipControls(false);
+            if (targetPlayer != null && targetPlayer.TryGetComponent(out PlayerControls opponentControls))
+            {
+                opponentControls.FlipControls(false);
+            }
         }
     }
 }

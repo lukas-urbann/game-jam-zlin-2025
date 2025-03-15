@@ -11,6 +11,6 @@ public class DebuffSlow : DebuffBase
 
     protected override void OnDebuffRemoved()
     {
-        targetPlayer.SetSpeed(1f);
+        targetPlayer.SetSpeed(targetPlayer.DefaultMoveSpeed);
     }
 }

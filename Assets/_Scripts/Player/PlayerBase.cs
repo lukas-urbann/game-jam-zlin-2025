@@ -15,13 +15,15 @@ public class PlayerBase : MonoBehaviour
 
     private GridNode _targetNode;
     [SerializeField] private float moveSpeed = 5f;
+
+    public float DefaultMoveSpeed = 5;
+
     [SerializeField] private float rotSpeed = 20f;
     private Quaternion _targetRotation;
 
     private PlayerControls _controls;
     private GridObject _currentNode;
-    
-    
+
     private float _initialSpeed;
 
     private void OnEnable()
