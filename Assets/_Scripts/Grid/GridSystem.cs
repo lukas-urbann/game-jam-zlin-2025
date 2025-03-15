@@ -12,7 +12,7 @@ namespace GJ25.Grid
         public int GridXLength => gridWidth - 1;
         public int GridZLength => gridHeight - 1;
 
-        [SerializeField] private int gridWidth = 16;
+        [SerializeField] private int gridWidth = 17;
         [SerializeField] private int gridHeight = 10;
         [SerializeField] private float nodeDistance = 1;
 
@@ -58,7 +58,7 @@ namespace GJ25.Grid
             for (int i = n - 1; i > 0; i--)
             {
                 int j = random.Next(0, i + 1);
-                (list[j], list[i]) = (list[i], list[j]); // absolutnì šílená syntaxe, co to je pro kristovy rány
+                (list[j], list[i]) = (list[i], list[j]); // absolutnï¿½ ï¿½ï¿½lenï¿½ syntaxe, co to je pro kristovy rï¿½ny
             }
         }
 
