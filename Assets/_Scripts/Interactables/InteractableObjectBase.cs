@@ -1,3 +1,4 @@
+using System;
 using GJ25.Interface;
 using GJ25.Player;
 using UnityEngine;
@@ -7,6 +8,47 @@ namespace GJ25.Interactables
 {
     public class InteractableObjectBase : MonoBehaviour, IInteractable
     {
+        private Animator _animator;
+
+        private void EnableHoverAnimation(object _) => _animator.SetBool("hover", true);
+        private void DisableHoverAnimation(object _) => _animator.SetBool("hover", false);
+        
+        
+        private void AssignAnimations()
+        {
+            onInteractHoverShow?.AddListener(EnableHoverAnimation);
+            onInteractHoverHide?.AddListener(DisableHoverAnimation);
+        }
+
+        private void OnDisable()
+        {
+            onInteractHoverShow.RemoveAllListeners();
+            onInteractHoverHide.RemoveAllListeners();
+            
+            ExtendedOnDisable();
+        }
+
+        private void OnEnable()
+        {
+            if (TryGetComponent(out Animator anim))
+            {
+                _animator = anim;
+                AssignAnimations();
+            }
+            
+            ExtendedOnEnable();
+        }
+
+        protected virtual void ExtendedOnEnable()
+        {
+            
+        }
+        
+        protected virtual void ExtendedOnDisable()
+        {
+            
+        }
+        
         public UnityEvent<PlayerBase> onInteract = new();
         public UnityEvent<PlayerBase> onInteractHoverShow = new();
         public UnityEvent<PlayerBase> onInteractHoverStay = new();
