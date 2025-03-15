@@ -1,6 +1,5 @@
 using UnityEngine;
 using GJ25.Grid;
-using GJ25.Player;
 using UnityEngine.Events;
 
 namespace GJ25.Player
@@ -32,6 +31,8 @@ namespace GJ25.Player
         public UnityEvent onInteractPerformed = new();
 
         private Animator _animator;
+        
+        public Vector2 _currentRotation = Vector2.zero;
         
         private void OnEnable()
         {
@@ -79,6 +80,8 @@ namespace GJ25.Player
             
             if (dx != 0 || dy != 0)
             {
+                _currentRotation = new Vector2(dx, dy);
+                
                 int newX = _currentNode.GetGridNode().GridX + dx;
                 int newY = _currentNode.GetGridNode().GridY + dy;
 
