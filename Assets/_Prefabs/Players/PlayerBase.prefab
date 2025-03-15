@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 4644688522277766699}
   - component: {fileID: 1890238799122646066}
   - component: {fileID: 5771446284768173285}
+  - component: {fileID: 3699164986860649902}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: Untagged
@@ -234,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74551527d5e97948b4c0f3d969e646c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentNode: {fileID: 0}
   moveSpeed: 5
+  DefaultMoveSpeed: 5
   rotSpeed: 10
 --- !u!114 &4644688522277766699
 MonoBehaviour:
@@ -250,7 +251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectRayDistance: 1
-  player: {fileID: 0}
 --- !u!114 &1890238799122646066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +278,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 903086d1505326442a760867476b1386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3699164986860649902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123224318111074878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe69e31225cc354bae8fbe37c99d143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9144234041445103210
