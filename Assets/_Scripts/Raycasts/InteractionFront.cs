@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using GJ25.Interface;
 namespace GJ25.Raycasts
 {
     public class InteractionFront : MonoBehaviour
@@ -31,8 +31,13 @@ namespace GJ25.Raycasts
 
             if (Physics.Raycast(ray, out RaycastHit hit, detectRayDistance))
             {
-                Debug.DrawRay(transform.position, direction * detectRayDistance, Color.green);
-                return true;
+                if (hit.collider.TryGetComponent(out IInteractable interactable))
+                {
+                    
+                    Debug.DrawRay(transform.position, direction * detectRayDistance, Color.green);
+                    return true;
+                }
+                
             }
 
             return false;
