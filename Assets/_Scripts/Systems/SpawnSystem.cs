@@ -32,12 +32,12 @@ namespace GJ25.Systems
                     if(node.OccupyingObject.TryGetComponent(out GridObject go)) go.SetGridNode(node);
                 }
 
+                //temp player spawn
                 if (node.GridX == 1 && node.GridY == 1)
                 {
                     node.OccupyingObject = Instantiate(redPlayer, node.WorldPosition, Quaternion.identity);
 
                     if (node.OccupyingObject.TryGetComponent(out GridObject goa)) goa.SetGridNode(node);
-
                     if (node.OccupyingObject.TryGetComponent(out GridObject go)) go.SetGridNode(node);
                 }
 
