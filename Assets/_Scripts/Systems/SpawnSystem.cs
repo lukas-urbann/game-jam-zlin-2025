@@ -29,18 +29,23 @@ namespace GJ25.Systems
                     node.GridY == GridSystem.Instance.GridZLength)
                 {
                     node.OccupyingObject = Instantiate(wall, node.WorldPosition, Quaternion.identity);
+                    if(node.OccupyingObject.TryGetComponent(out GridObject go)) go.SetGridNode(node);
                 }
 
                 if (node.GridX == 1 && node.GridY == 1)
                 {
                     node.OccupyingObject = Instantiate(redPlayer, node.WorldPosition, Quaternion.identity);
-                    node.OccupyingObject.GetComponent<PlayerBase>().currentNode = node;
+
+                    if (node.OccupyingObject.TryGetComponent(out GridObject goa)) goa.SetGridNode(node);
+
+                    if (node.OccupyingObject.TryGetComponent(out GridObject go)) go.SetGridNode(node);
                 }
 
                 if (node.GridX == GridSystem.Instance.GridXLength-1 && node.GridY == GridSystem.Instance.GridZLength-1)
                 {
                     node.OccupyingObject = Instantiate(bluePlayer, node.WorldPosition, Quaternion.identity);
-                    node.OccupyingObject.GetComponent<PlayerBase>().currentNode = node;
+                    if (node.OccupyingObject.TryGetComponent(out GridObject goa)) goa.SetGridNode(node);
+                    if (node.OccupyingObject.TryGetComponent(out GridObject go)) go.SetGridNode(node);
                 }
             }
         }

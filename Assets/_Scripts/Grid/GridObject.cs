@@ -1,16 +1,12 @@
 using UnityEngine;
-using GJ25.Interface;
 
 namespace GJ25.Grid
 {
-    public abstract class GridObject : MonoBehaviour, IInteractable
+    public class GridObject : MonoBehaviour
     {
-        [SerializeField] protected Vector2Int gridPos;
-        public Vector2Int GridPos => gridPos;
+        private GridNode currentGridNode;
 
-        public void Interact()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void SetGridNode(GridNode g) => currentGridNode = g;
+        public GridNode GetGridNode() => currentGridNode;
     }
 }
