@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,8 +5,9 @@ namespace GJ25.Grid
 {
     public class GridSystem : MonoBehaviour
     {
-        public static GridSystem Instance;
         private GridNode[,] gameGrid;
+        private Vector3 gridOrigin = Vector3.zero;
+
         public GridNode[,] Grid => gameGrid;
         public int GridXLength => gridWidth - 1;
         public int GridZLength => gridHeight - 1;
@@ -18,19 +18,25 @@ namespace GJ25.Grid
 
         public UnityEvent onGridSpawned;
 
-        private void Awake()
+        #region Singleton
+        public static GridSystem Instance
         {
-            if (Instance == null)
+            get
             {
-                Instance = this;
+                if (instance == null)
+                    instance = FindObjectOfType(typeof(GridSystem)) as GridSystem;
+
+                return instance;
             }
-            else
+            set
             {
-                Destroy(this);
+                instance = value;
             }
         }
+        private static GridSystem instance;
+        #endregion
 
-        private void Start()
+        private void OnEnable()
         {
             InitializeGrid(this.gridWidth, this.gridHeight, this.nodeDistance);
         }
@@ -50,44 +56,15 @@ namespace GJ25.Grid
             onGridSpawned?.Invoke();
         }
 
-        private void ShuffleList<T>(List<T> list)
+        public GridNode GetNearestNode(Vector3 worldPosition)
         {
-            System.Random random = new();
-            int n = list.Count;
+            int x = Mathf.RoundToInt((worldPosition.x - gridOrigin.x) / nodeDistance);
+            int y = Mathf.RoundToInt((worldPosition.z - gridOrigin.z) / nodeDistance);
 
-            for (int i = n - 1; i > 0; i--)
-            {
-                int j = random.Next(0, i + 1);
-                (list[j], list[i]) = (list[i], list[j]); // absolutn� ��len� syntaxe, co to je pro kristovy r�ny
-            }
-        }
+            x = Mathf.Clamp(x, 0, gridWidth - 1);
+            y = Mathf.Clamp(y, 0, gridHeight - 1);
 
-        private void PlaceObjectAtNode(GridNode node, GameObject go)
-        {
-            GameObject obj = Instantiate(go, node.WorldPosition, Quaternion.identity);
-            obj.name = $"{go.name}_X{node.GridX}_Y{node.GridY}";
-            node.OccupyingObject = obj;
-        }
-
-        private List<GridNode> GetAllBorderNodes()
-        {
-            List<GridNode> borderNodes = new();
-
-            //top, bottom
-            for (int x = 0; x < gridWidth; x++)
-            {
-                borderNodes.Add(gameGrid[x, 0]);
-                borderNodes.Add(gameGrid[x, gridHeight - 1]);
-            }
-
-            //left, right
-            for (int y = 1; y < gridHeight - 1; y++)
-            {
-                borderNodes.Add(gameGrid[0, y]);
-                borderNodes.Add(gameGrid[gridWidth - 1, y]);
-            }
-
-            return borderNodes;
+            return gameGrid[x, y];
         }
     }
 }

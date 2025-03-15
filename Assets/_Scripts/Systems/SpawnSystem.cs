@@ -14,13 +14,10 @@ namespace GJ25.Systems
             GridSystem.Instance.onGridSpawned.AddListener(SpawnWalls);
         }
 
-        private void OnDisable()
-        {
-            GridSystem.Instance.onGridSpawned.RemoveListener(SpawnWalls);
-        }
-
         private void SpawnWalls()
         {
+            GridSystem.Instance.onGridSpawned.RemoveListener(SpawnWalls);
+            
             foreach (var node in GridSystem.Instance.Grid)
             {
                 if (node.GridX == 0 ||
