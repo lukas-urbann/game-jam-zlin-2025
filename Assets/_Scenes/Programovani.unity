@@ -1616,6 +1616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2830165242128328431, guid: cc39a274d80a35346a54953e3f1f7e14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5513989564261359180, guid: cc39a274d80a35346a54953e3f1f7e14, type: 3}
       propertyPath: m_Name
       value: Chair
