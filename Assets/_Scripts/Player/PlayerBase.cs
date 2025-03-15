@@ -10,16 +10,19 @@ public class PlayerBase : MonoBehaviour
         Moving
     }
 
-    private PlayerState currentState = PlayerState.Idle;
-    public PlayerState State { get { return currentState; } }
+    private PlayerState _currentState = PlayerState.Idle;
+    public PlayerState State { get { return _currentState; } }
 
-    private GridNode targetNode;
+    private GridNode _targetNode;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotSpeed = 20f;
-    private Quaternion targetRotation;
+    private Quaternion _targetRotation;
 
     private PlayerControls _controls;
     private GridObject _currentNode;
+    
+    
+    private float _initialSpeed;
 
     private void OnEnable()
     {
@@ -27,9 +30,14 @@ public class PlayerBase : MonoBehaviour
         if (TryGetComponent(out PlayerControls ct)) _controls = ct;
     }
 
+    private void Start()
+    {
+        _initialSpeed = moveSpeed;
+    }
+
     private void Update()
     {
-        switch (currentState)
+        switch (_currentState)
         {
             case PlayerState.Idle:
                 CheckForMovementInput();
@@ -63,15 +71,15 @@ public class PlayerBase : MonoBehaviour
             // Check if valid move
             if (GridSystem.Instance.Grid[newX, newY].OccupyingObject == null)
             {
-                targetNode = GridSystem.Instance.Grid[newX, newY];
-                currentState = PlayerState.Moving;
+                _targetNode = GridSystem.Instance.Grid[newX, newY];
+                _currentState = PlayerState.Moving;
                 
-                Vector3 direction = (targetNode.WorldPosition - transform.position).normalized;
-                targetRotation = Quaternion.LookRotation(direction);
+                Vector3 direction = (_targetNode.WorldPosition - transform.position).normalized;
+                _targetRotation = Quaternion.LookRotation(direction);
 
                 // Update grid occupancy
                 GridSystem.Instance.Grid[_currentNode.GetGridNode().GridX, _currentNode.GetGridNode().GridY].OccupyingObject = null;
-                GridSystem.Instance.Grid[targetNode.GridX, targetNode.GridY].OccupyingObject = gameObject;
+                GridSystem.Instance.Grid[_targetNode.GridX, _targetNode.GridY].OccupyingObject = gameObject;
             }
         }
     }
@@ -80,15 +88,15 @@ public class PlayerBase : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(
             transform.position,
-            targetNode.WorldPosition,
+            _targetNode.WorldPosition,
             moveSpeed * Time.deltaTime
         );
 
-        if (Vector3.Distance(transform.position, targetNode.WorldPosition) < 0.01f)
+        if (Vector3.Distance(transform.position, _targetNode.WorldPosition) < 0.01f)
         {
-            transform.position = targetNode.WorldPosition;
-            _currentNode.SetGridNode(targetNode);
-            currentState = PlayerState.Idle;
+            transform.position = _targetNode.WorldPosition;
+            _currentNode.SetGridNode(_targetNode);
+            _currentState = PlayerState.Idle;
         }
     }
     
@@ -96,8 +104,16 @@ public class PlayerBase : MonoBehaviour
     {
         transform.rotation = Quaternion.Lerp(
             transform.rotation,
-            targetRotation,
+            _targetRotation,
             rotSpeed * Time.deltaTime
         );
     }
+    
+
+    public void SetSpeed(float multiplier)
+    {
+        moveSpeed = _initialSpeed * multiplier;
+    }
+    
 }
+
