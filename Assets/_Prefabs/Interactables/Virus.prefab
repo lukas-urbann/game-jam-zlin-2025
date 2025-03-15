@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3705148867574266889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8729354648407271945}
+  m_Layer: 0
+  m_Name: Decoy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8729354648407271945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705148867574266889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6137443514392220034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &821598824383154162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,11 +88,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9987a81ca9098dc429b894cf2f27c8fc, type: 3}
---- !u!1 &4846235706878399938 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5199316116474794544, guid: 9987a81ca9098dc429b894cf2f27c8fc, type: 3}
-  m_PrefabInstance: {fileID: 821598824383154162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5754669615063347486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4952365579142510316, guid: 9987a81ca9098dc429b894cf2f27c8fc, type: 3}
@@ -146,6 +172,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       insertIndex: 0
       addedObject: {fileID: 5754669615063347486}
+    - targetCorrespondingSourceObject: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8729354648407271945}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       insertIndex: -1
@@ -168,10 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f54bd107a6c5d845b4813164e7e70c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelObject: {fileID: 4846235706878399938}
+  modelObject: {fileID: 3705148867574266889}
   loadBar: {fileID: 7075377942891988695}
   loadBarFill: {fileID: 1314963746151712852}
   cooldown: 8
+  _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -196,6 +226,8 @@ MonoBehaviour:
   onInteractHoverHide:
     m_PersistentCalls:
       m_Calls: []
+  duration: 10
+  debuff: -15
 --- !u!114 &1314963746151712852 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
