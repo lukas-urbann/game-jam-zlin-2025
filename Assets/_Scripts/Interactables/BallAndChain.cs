@@ -19,6 +19,7 @@ namespace GJ25.Interactables
             {
                 EffectBase slow = new EffectSlow(duration, multiplier, otherPlayer);
                 otherPlayer.AddDebuff(slow);
+                otherPlayer.aCall.PlaySound("ball");
             }
         }
 

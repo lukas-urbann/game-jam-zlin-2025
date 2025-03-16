@@ -128,8 +128,8 @@ public class TypingTest: MonoBehaviour
 
     void GenerateNewSequences()
     {
-        player1Sequence = ShuffleString("WSADWSADWSAD");
-        player2Sequence = ShuffleString("↑↓←→↑↓←→↑↓←→");
+        player1Sequence = ShuffleString("WSADWS");
+        player2Sequence = ShuffleString("↑↓←→↑↓");
         
         player1Text.text = player1Sequence;
         player2Text.text = player2Sequence;

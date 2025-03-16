@@ -661,10 +661,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 5986320819957995975, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
+      propertyPath: m_Color.g
+      value: 0.41104555
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986320819957995975, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6673922003603483801, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: m_Center.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7898703639910328375, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
+      propertyPath: aCall
+      value: 
+      objectReference: {fileID: 7974575432150180744}
     - target: {fileID: 7898703639910328375, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: baseballBat
       value: 

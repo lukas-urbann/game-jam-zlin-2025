@@ -47,7 +47,121 @@ MonoBehaviour:
   sounds:
   - name: bgm
     clip: {fileID: 8300000, guid: 99483d0ed831328449e4426da159d138, type: 3}
-    volume: 0.8
+    volume: 0.5
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: virusInteract
+    clip: {fileID: 8300000, guid: 48006f1cf79c716469fdb508ebed1976, type: 3}
+    volume: 0.697
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: beerInteract
+    clip: {fileID: 8300000, guid: 14e60fca69f0a084a81ebd2213f199ff, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pizzaInteract
+    clip: {fileID: 8300000, guid: 5ec30f1a5a1dc8d4da2c4f418ead9b8e, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: toiletInteract
+    clip: {fileID: 8300000, guid: 81ff35981c1be65488c28f4703db6827, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: laxativeInteract
+    clip: {fileID: 8300000, guid: 00ecebd5073a1714b9482912919dded2, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: batSwing
+    clip: {fileID: 8300000, guid: 129722ecf50fd64489991581388b8e37, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ball
+    clip: {fileID: 8300000, guid: 3a80559de3ec10e4bac2e86b5c7aa8b4, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pcInteract
+    clip: {fileID: 8300000, guid: 44ed22b75890225478ea63e0769ac09b, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerStep1
+    clip: {fileID: 8300000, guid: 690049c8aac22374ca4d63888cd4e0fb, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerStep2
+    clip: {fileID: 8300000, guid: b7a56eb087fc03e4bace4845ec58c460, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerStep3
+    clip: {fileID: 8300000, guid: 31f3c9be44aecd84d86b5e685935d906, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: powerSupplyInteract
+    clip: {fileID: 8300000, guid: 5939cc9353756804db5a19868cac18e0, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: chairInteract
+    clip: {fileID: 8300000, guid: 643c1bd3bf56c834ca09ac3202228108, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: batHit
+    clip: {fileID: 8300000, guid: ab71b59a32911ba4cb934a9e468bf7b4, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerStep4
+    clip: {fileID: 8300000, guid: 39231497683ff764e803584805e49537, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerStep5
+    clip: {fileID: 8300000, guid: 9f2ca45e26f2d104eb992a30f41284d2, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: baseballInteract
+    clip: {fileID: 8300000, guid: 2ad748b4d5d1faa48be4a4872d333ee3, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tabletInteract
+    clip: {fileID: 8300000, guid: da27497bcf7a4464098e563e8db3713d, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: victory
+    clip: {fileID: 8300000, guid: 00ecebd5073a1714b9482912919dded2, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

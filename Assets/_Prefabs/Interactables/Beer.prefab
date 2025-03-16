@@ -186,7 +186,7 @@ MonoBehaviour:
   onInteractHoverHide:
     m_PersistentCalls:
       m_Calls: []
-  duration: 15
+  duration: 10
 --- !u!114 &3760524997444867839
 MonoBehaviour:
   m_ObjectHideFlags: 0

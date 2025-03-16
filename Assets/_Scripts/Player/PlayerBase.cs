@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using GJ25.Audio;
 using GJ25.Debuff;
 using UnityEngine;
 using GJ25.Grid;
 using UnityEngine.Events;
+using Random = System.Random;
 
 namespace GJ25.Player
 {
@@ -16,6 +18,7 @@ namespace GJ25.Player
     
     public class PlayerBase : MonoBehaviour
     {
+        public AudioCall aCall;
         private ObjectState _currentState = ObjectState.Idle;
         public ObjectState State { get { return _currentState; } }
         public float InitialSpeed => _initialSpeed;
@@ -55,6 +58,7 @@ namespace GJ25.Player
         {
             if (other.gameObject.CompareTag("Bat"))
             {
+                aCall.PlaySound("batHit");
                 CameraShake.Instance.Shake();
                 if (HasForDebuff(BuffNames.BAT))
                 {
@@ -224,6 +228,7 @@ namespace GJ25.Player
             }
         }
 
+        string[] stepsfx = { "playerStep1", "playerStep2", "playerStep3", "playerStep4", "playerStep5" };
         private void MoveToTargetNode()
         {
             transform.position = Vector3.MoveTowards(
@@ -237,6 +242,7 @@ namespace GJ25.Player
                 transform.position = _targetNode.WorldPosition;
                 _currentNode.SetGridNode(_targetNode);
                 _currentState = ObjectState.Idle;
+                aCall.PlaySound(stepsfx[new Random().Next(stepsfx.Length)]);
             }
         }
         
