@@ -9,7 +9,9 @@ public class TypingTest: MonoBehaviour
     public static TypingTest Instance { get; private set; }
     
     public TextMeshProUGUI player1Text;
+    public GameObject player1Panel;
     public TextMeshProUGUI player2Text;
+    public GameObject player2Panel;
     public GameObject typingPanel;
     
     private string player1Sequence;
@@ -62,7 +64,7 @@ public class TypingTest: MonoBehaviour
 
                         if (currentIndex >= sequence.Length)
                         {
-                            text.text = "<color=green>SUCCESS</color>";
+                            text.text = "<color=green>OK</color>";
                             if (isPlayer1Active && onPlayer1Success != null)
                             {
                                 onPlayer1Success();
@@ -96,7 +98,9 @@ public class TypingTest: MonoBehaviour
         player1Index = 0;
         player2Index = 0;
         player1Text.gameObject.SetActive(isPlayer1);
+        player1Panel.gameObject.SetActive(isPlayer1);
         player2Text.gameObject.SetActive(!isPlayer1);
+        player2Panel.gameObject.SetActive(!isPlayer1);
         
         Debug.Log("Player 1 text: " + player1Text.text);
         Debug.Log("Player 2 text: " + player2Text.text);
