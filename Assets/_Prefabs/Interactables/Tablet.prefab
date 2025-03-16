@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4762827193890964814, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 63fc856af6549c6418472b38f30102cf, type: 3}
     - target: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_Name
       value: Tablet
@@ -327,6 +331,12 @@ MonoBehaviour:
   loadBar: {fileID: 8643338504324058454}
   loadBarFill: {fileID: 575392974777926613}
   cooldown: 12
+  onInteractableEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractableDisable:
+    m_PersistentCalls:
+      m_Calls: []
   _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:

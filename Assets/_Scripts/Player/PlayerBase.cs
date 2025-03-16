@@ -52,6 +52,10 @@ namespace GJ25.Player
             if (other.gameObject.CompareTag("Bat"))
             {
                 CameraShake.Instance.Shake();
+                if (HasForDebuff(BuffNames.BAT))
+                {
+                    RemoveDebuff(BuffNames.BAT);   
+                }
                 AddDebuff(new EffectStun(3.5f, this));
             }
         }
