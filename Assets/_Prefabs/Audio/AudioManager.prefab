@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: bgm
-    clip: {fileID: 8300000, guid: 99483d0ed831328449e4426da159d138, type: 3}
+    clip: {fileID: 8300000, guid: d3f30dde737bc9243a0354260381b850, type: 3}
     volume: 0.5
     pitch: 1
     loop: 1
