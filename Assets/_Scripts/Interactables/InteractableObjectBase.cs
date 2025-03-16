@@ -19,6 +19,9 @@ namespace GJ25.Interactables
         [SerializeField] private float cooldown = 10;
         protected bool CanInteract = true;
 
+        public UnityEvent onInteractableEnable = new();
+        public UnityEvent onInteractableDisable = new();
+
         protected void StartCooldown()
         {
             StartCoroutine(WaitForCooldown());
@@ -56,6 +59,7 @@ namespace GJ25.Interactables
             modelObject?.SetActive(true);
             loadBar?.SetActive(false);
             DisableHoverAnimation(null);
+            onInteractableEnable?.Invoke();
         }
 
         protected void DisableInteractable()
@@ -64,6 +68,7 @@ namespace GJ25.Interactables
             if (loadBarFill) loadBarFill.fillAmount = 0;
             modelObject?.SetActive(false);
             loadBar?.SetActive(true);
+            onInteractableDisable?.Invoke();
         }
         
         [SerializeField] private Animator _animator;

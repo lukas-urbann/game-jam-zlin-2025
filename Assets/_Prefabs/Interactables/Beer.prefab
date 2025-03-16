@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4342622212441860933, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.708
+      objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1300449
@@ -48,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4762827193890964814, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 33c38bce11e20864bacce92f75119a2e, type: 3}
     - target: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_Name
       value: Beer
@@ -111,6 +119,36 @@ MonoBehaviour:
   loadBar: {fileID: 7856163496853614072}
   loadBarFill: {fileID: 2092424900794671995}
   cooldown: 30
+  onInteractableEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1780056410964716554}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onInteractableDisable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1780056410964716554}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:
@@ -161,6 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f3dedf01989674096014b3fb167836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1780056410964716554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8960452291390911090, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+  m_PrefabInstance: {fileID: 7272728722300853880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2092424900794671995 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
