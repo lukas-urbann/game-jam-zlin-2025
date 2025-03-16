@@ -29,6 +29,8 @@ namespace GJ25.Player
         
         private List<EffectBase> activeEffects = new List<EffectBase>();
         
+        public bool pcLock = false;
+        
         public GameObject slownessIndicator;
         public GameObject laxativeIndicator;
         public GameObject starsIndicator;
@@ -194,7 +196,7 @@ namespace GJ25.Player
             dx = 0;
             dy = 0;
 
-            if (!HasForDebuff(BuffNames.STUN))
+            if (!HasForDebuff(BuffNames.STUN) && !pcLock)
             {
                 if(Input.GetKey(_controls.up)) dy = 1;
                 else if(Input.GetKey(_controls.down)) dy = -1;

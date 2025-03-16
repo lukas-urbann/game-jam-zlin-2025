@@ -2331,7 +2331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &170603256
 Transform:
   m_ObjectHideFlags: 0
@@ -25701,6 +25701,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1808141090994681701, guid: a5866baa296b3f04c9500793ad9b48f9, type: 3}
   m_PrefabInstance: {fileID: 1428631110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431667009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6252403379384430190, guid: 4ad0d5dfa13ba7f4790b7f5c4e7e7701, type: 3}
+  m_PrefabInstance: {fileID: 2105326036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1435919562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3700228752383076786, guid: 759250786ec68104cacacf54126e71fc, type: 3}
@@ -38331,6 +38336,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5854586684919102592, guid: 4ad0d5dfa13ba7f4790b7f5c4e7e7701, type: 3}
+      propertyPath: typingPanel
+      value: 
+      objectReference: {fileID: 1431667009}
     - target: {fileID: 6252403379384430190, guid: 4ad0d5dfa13ba7f4790b7f5c4e7e7701, type: 3}
       propertyPath: m_Name
       value: TypingCanvas (1)
@@ -39850,8 +39859,8 @@ SceneRoots:
   - {fileID: 139180678}
   - {fileID: 1798606851}
   - {fileID: 652931020}
-  - {fileID: 1343804057}
   - {fileID: 252837447}
+  - {fileID: 1343804057}
   - {fileID: 170603256}
   - {fileID: 2111014255}
   - {fileID: 472128840}

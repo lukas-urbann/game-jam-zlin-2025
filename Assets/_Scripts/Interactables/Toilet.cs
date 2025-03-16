@@ -8,12 +8,7 @@ namespace GJ25.Interactables
         public override void ExtendedInteraction(PlayerBase player)
         {
             if (player == null) return;
-            bool isPlayer1 = player.name.Contains("Red"); 
-
-            TypingTest.Instance.StartTypingChallenge(isPlayer1, () => {
-                player.RemoveDebuff(BuffNames.LAXNESS);
-            });
-            
+            player.RemoveDebuff(BuffNames.LAXNESS);
         }
 
         public override bool ExtendedCondition(PlayerBase player)

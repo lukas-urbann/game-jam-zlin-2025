@@ -43,10 +43,14 @@ namespace GJ25.Player
 
             if (HasMalfunction)
             {
-                bool isPlayer1 = player.name.Contains("Red"); 
-
+                bool isPlayer1 = player.name.Contains("Red"); // my beloved (sam), ja bych tohle nenapsal dekuju
+                
+                //tvl
+                playerOwner.pcLock = true;
+                
                 TypingTest.Instance.StartTypingChallenge(isPlayer1, () => {
                     ResetMalfunction();
+                    playerOwner.pcLock = false;
                 });
             }
         }
