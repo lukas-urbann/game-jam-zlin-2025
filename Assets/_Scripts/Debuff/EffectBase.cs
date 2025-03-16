@@ -32,6 +32,10 @@ namespace GJ25.Debuff
         {
         }
         
+        public virtual void TrackEffect()
+        {
+        }
+        
 
         public bool UpdateDebuff(float deltaTime)
         {

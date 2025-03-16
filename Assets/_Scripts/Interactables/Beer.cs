@@ -11,7 +11,7 @@ namespace GJ25.Interactables
 
         public override void ExtendedInteraction(PlayerBase player)
         {
-            PlayerBase otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
+            PlayerBase otherPlayer = PlayerQuery.instance.players.FirstOrDefault(p => p != player);
 
             if (otherPlayer != null)
             {

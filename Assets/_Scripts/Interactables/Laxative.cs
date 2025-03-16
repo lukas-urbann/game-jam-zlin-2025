@@ -13,7 +13,7 @@ namespace GJ25.Interactables
         
         public override void ExtendedInteraction(PlayerBase player)
         {
-            otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
+            otherPlayer = PlayerQuery.instance.players.FirstOrDefault(p => p != player);
 
             if (otherPlayer != null)
             {
@@ -24,7 +24,7 @@ namespace GJ25.Interactables
 
         public override bool ExtendedCondition(PlayerBase player)
         {
-            otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
+            otherPlayer = PlayerQuery.instance.players.FirstOrDefault(p => p != player);
 
             if (otherPlayer.HasForDebuff(BuffNames.SLOWNESS)) return false;
 
