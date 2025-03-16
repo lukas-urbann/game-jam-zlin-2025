@@ -11761,9 +11761,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6786964281554770744, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807557651278819878, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16638,6 +16650,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081786344125229505, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6786964281554770744, guid: 5278a0b82286b65409335ef11e8d1c6b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5
@@ -20917,6 +20949,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6902573867230041995, guid: 38e7ebaf835c2374a8c7ab882f2fd531, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38e7ebaf835c2374a8c7ab882f2fd531, type: 3}
       propertyPath: m_Name
       value: kytka_velka (1)
@@ -22077,6 +22113,10 @@ PrefabInstance:
     - target: {fileID: 5532833564670994894, guid: 2152664650a104446a8110c3779e0e35, type: 3}
       propertyPath: m_Name
       value: Laxative
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469252355681682123, guid: 2152664650a104446a8110c3779e0e35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.079
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26800,7 +26840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0d9f6e3cccb69b442ad7f98327612692, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2725315
+      value: -0.223
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9f6e3cccb69b442ad7f98327612692, type: 3}
       propertyPath: m_LocalPosition.y
