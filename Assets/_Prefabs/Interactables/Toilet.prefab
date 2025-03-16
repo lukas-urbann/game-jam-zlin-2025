@@ -262,6 +262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4762827193890964814, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6eff65768451fa64c9e6cb9b2af9e19d, type: 3}
     - target: {fileID: 7072968290895219491, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_Name
       value: Toilet
@@ -340,6 +344,12 @@ MonoBehaviour:
   loadBar: {fileID: 8125627711457281677}
   loadBarFill: {fileID: 57276952812095502}
   cooldown: 30
+  onInteractableEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractableDisable:
+    m_PersistentCalls:
+      m_Calls: []
   _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:
