@@ -13,7 +13,7 @@ namespace GJ25.Player
         [SerializeField] private float currentHealth = 0;
         [SerializeField] private Image healthBarFill;
         
-        private const float WinningHealth = 180;
+        private const float WinningHealth = 240;
         private const float StartHealth = 0;
         
         private float _currentSpeed;

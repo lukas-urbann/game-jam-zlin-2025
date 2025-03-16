@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5771446284768173285}
   - component: {fileID: 3699164986860649902}
   - component: {fileID: 1002782531167648092}
+  - component: {fileID: 22391242164235399}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: Untagged
@@ -72,8 +73,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  DefaultMoveSpeed: 5
   rotSpeed: 10
+  computer: {fileID: 0}
+  dx: 0
+  dy: 0
+  slownessIndicator: {fileID: 0}
+  laxativeIndicator: {fileID: 0}
+  starsIndicator: {fileID: 0}
+  baseballBat: {fileID: 0}
   onInteractPerformed:
     m_PersistentCalls:
       m_Calls:
@@ -165,3 +172,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &22391242164235399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123224318111074878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f3dedf01989674096014b3fb167836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

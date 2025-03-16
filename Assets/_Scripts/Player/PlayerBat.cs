@@ -1,4 +1,4 @@
-using System;
+using GJ25.Audio;
 using GJ25.Debuff;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ namespace GJ25.Player
         public PlayerBase player;
         public Animator anim;
         public BoxCollider hitBox;
-        public GameObject bat;
+        public AudioCall audioCall;
 
         private void OnEnable()
         {
@@ -25,6 +25,7 @@ namespace GJ25.Player
         {
             anim.SetBool("hit", true);
             hitBox.enabled = true;
+            audioCall.PlaySound("batSwing");
         }
 
         public void StopSwing()

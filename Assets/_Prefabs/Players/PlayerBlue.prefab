@@ -72,7 +72,7 @@ MonoBehaviour:
   player: {fileID: 250296887476332344}
   anim: {fileID: 7274696038285428702}
   hitBox: {fileID: 6685061057183722774}
-  bat: {fileID: 1227901779817292265}
+  audioCall: {fileID: 7974575432150180744}
 --- !u!1 &4268425982140453214
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,15 +421,15 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 3f951376535c69f459cbdda4ee2f4189, type: 2}
     - target: {fileID: 1111337250751281641, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1111337250751281641, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00000047683716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1111337250751281641, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.83
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1111337250751281641, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -553,6 +553,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1111337250751281641, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
   m_PrefabInstance: {fileID: 7990774069561200399}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7974575432150180744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 22391242164235399, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
+  m_PrefabInstance: {fileID: 7990774069561200399}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f3dedf01989674096014b3fb167836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8215679410065945976
 PrefabInstance:
   m_ObjectHideFlags: 0
