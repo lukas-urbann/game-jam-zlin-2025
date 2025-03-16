@@ -14427,6 +14427,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus
       objectReference: {fileID: 0}
+    - target: {fileID: 5754669615063347486, guid: 7fa5c0027e815b24bb3f43ecd6f37214, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.962
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754669615063347486, guid: 7fa5c0027e815b24bb3f43ecd6f37214, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.027
+      objectReference: {fileID: 0}
     - target: {fileID: 6137443514392220034, guid: 7fa5c0027e815b24bb3f43ecd6f37214, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.130045
