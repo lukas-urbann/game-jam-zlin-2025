@@ -193,14 +193,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1140356667528645764, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -285.5
+      value: 28.6
       objectReference: {fileID: 0}
     - target: {fileID: 1140356667528645764, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
       propertyPath: m_SizeDelta.y
       value: -291.5
       objectReference: {fileID: 0}
     - target: {fileID: 1140356667528645764, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140356667528645764, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140356667528645764, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4385606067235096512, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
@@ -238,8 +246,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4385606067235096512, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 719860033759910836}
   m_SourcePrefab: {fileID: 100100000, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
+--- !u!1 &714769617441813376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4385606067235096512, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}
+  m_PrefabInstance: {fileID: 3834694503202354240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &719860033759910836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714769617441813376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46f41ff9909320419ccbaee4e0cff64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3525062071176431148 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 422242236003545708, guid: 4a5d7882e49aa49439d629ed3c4ae6e5, type: 3}

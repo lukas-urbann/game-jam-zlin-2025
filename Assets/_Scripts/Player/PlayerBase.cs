@@ -122,7 +122,7 @@ namespace GJ25.Player
                     break;
                 
             }
-            
+
             effect.ApplyEffect();
             activeEffects.Add(effect);
         }
