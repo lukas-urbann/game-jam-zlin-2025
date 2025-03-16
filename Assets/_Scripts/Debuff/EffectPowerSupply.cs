@@ -2,12 +2,12 @@ using GJ25.Player;
 
 namespace GJ25.Debuff
 {
-    public class EffectComputerSpeed : EffectBase
+    public class EffectPowerSupply : EffectBase
     {
         private float speedMultiplier;
 
-        public EffectComputerSpeed(float duration, float speedAmount, PlayerBase player) 
-            : base(BuffNames.COMPUTERSPEED, duration, player)
+        public EffectPowerSupply(float duration, float speedAmount, PlayerBase player) 
+            : base(BuffNames.POWERSUPPLY, duration, player)
         {
             speedMultiplier = speedAmount;
         }

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using GJ25.Debuff;
 using UnityEngine;
 using GJ25.Grid;
@@ -27,6 +29,13 @@ namespace GJ25.Player
         
         private List<EffectBase> activeEffects = new List<EffectBase>();
         
+        public GameObject slownessIndicator;
+        public GameObject laxativeIndicator;
+        public GameObject starsIndicator;
+        public GameObject baseballBat;
+
+        public PlayerControls Controls => _controls;
+        
         #region Private
         private GridNode _targetNode;
         private Quaternion _targetRotation;
@@ -37,7 +46,16 @@ namespace GJ25.Player
         #endregion
         
         public UnityEvent onInteractPerformed = new();
-        
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("collision enter s " + other.gameObject.name);
+            if (other.gameObject.CompareTag("Bat"))
+            {
+                AddDebuff(new EffectStun(10, this));
+            }
+        }
+
         private void OnEnable()
         {
             PlayerQuery.players.Add(this);
@@ -64,7 +82,7 @@ namespace GJ25.Player
             {
                 if (activeEffects[i].UpdateDebuff(Time.deltaTime))
                 {
-                    activeEffects.RemoveAt(i);
+                    PostRemoveEffect(i);
                 }
             }
         }
@@ -87,6 +105,23 @@ namespace GJ25.Player
         
         public void AddDebuff(EffectBase effect)
         {
+            switch (effect.Name)
+            {
+                case BuffNames.SLOWNESS:
+                    slownessIndicator.SetActive(true);
+                    break;
+                case BuffNames.LAXNESS:
+                    laxativeIndicator.SetActive(true);
+                    break;
+                case BuffNames.STUN:
+                    starsIndicator.SetActive(true);
+                    break;
+                case BuffNames.BAT:
+                    baseballBat.SetActive(true);
+                    break;
+                
+            }
+            
             effect.ApplyEffect();
             activeEffects.Add(effect);
         }
@@ -95,18 +130,57 @@ namespace GJ25.Player
         {
             RotateToTarget();
         }
-            
+
+        private void PostRemoveEffect(int effectIndex)
+        {
+            switch (activeEffects[effectIndex].Name)
+            {
+                case BuffNames.SLOWNESS:
+                    slownessIndicator.SetActive(false);
+                    break;
+                case BuffNames.LAXNESS:
+                    laxativeIndicator.SetActive(false);
+                    break;
+                case BuffNames.STUN:
+                    starsIndicator.SetActive(false);
+                    break;
+                case BuffNames.BAT:
+                    baseballBat.SetActive(false);
+                    break;
+            }
+            activeEffects.RemoveAt(effectIndex);
+        }
+
+        public bool HasForDebuff(string effectName)
+        {
+            return activeEffects.Any(e => e.Name == effectName);
+        }
+        
+        public void RemoveDebuff(string debuffName)
+        {
+            for (int i = activeEffects.Count - 1; i >= 0; i--)
+            {
+                if (activeEffects[i].Name == debuffName)
+                {
+                    activeEffects[i].OnExpire();
+                    PostRemoveEffect(i);
+                }
+            }
+        }
+        
         private void CheckForMovementInput()
         {
             dx = 0;
             dy = 0;
 
-            if(Input.GetKey(_controls.up)) dy = 1;
-            else if(Input.GetKey(_controls.down)) dy = -1;
-            else if(Input.GetKey(_controls.left)) dx = -1;
-            else if (Input.GetKey(_controls.right)) dx = 1;
-
-            if (Input.GetKeyDown(_controls.interact)) onInteractPerformed?.Invoke();
+            if (!HasForDebuff(BuffNames.STUN))
+            {
+                if(Input.GetKey(_controls.up)) dy = 1;
+                else if(Input.GetKey(_controls.down)) dy = -1;
+                else if(Input.GetKey(_controls.left)) dx = -1;
+                else if (Input.GetKey(_controls.right)) dx = 1;
+                if (Input.GetKeyDown(_controls.interact)) onInteractPerformed?.Invoke();
+            }
             
             if (dx != 0 || dy != 0)
             {

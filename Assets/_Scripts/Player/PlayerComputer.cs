@@ -46,6 +46,11 @@ namespace GJ25.Player
             }
         }
 
+        public override bool ExtendedCondition(PlayerBase player)
+        {
+            return true;
+        }
+
         public void ResetMalfunction()
         {
             activeEffects.Clear();
@@ -58,6 +63,18 @@ namespace GJ25.Player
             ToggleMalfunction(false);
             currentHealth = StartHealth;
             _currentSpeed = _initialSpeed;
+        }
+        
+        public void RemoveDebuff(string debuffName)
+        {
+            for (int i = activeEffects.Count - 1; i >= 0; i--)
+            {
+                if (activeEffects[i].Name == debuffName)
+                {
+                    activeEffects[i].OnExpire();
+                    activeEffects.RemoveAt(i);
+                }
+            }
         }
 
         private void Update()
@@ -101,6 +118,13 @@ namespace GJ25.Player
         
         public void AddDebuff(EffectBase effect)
         {
+            switch (effect.Name)
+            {
+                case BuffNames.POWERSUPPLY:
+                    ToggleMalfunction(true);
+                    break;
+            }
+            
             effect.ApplyEffect();
             activeEffects.Add(effect);
         }

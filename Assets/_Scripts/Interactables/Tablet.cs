@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace GJ25.Interactables
 {
-    public class Virus : InteractableObjectBase
+    public class Tablet : InteractableObjectBase
     {
         [SerializeField] private float duration = 10f;
-        [SerializeField] private float debuff = -15f;
-            
+        [SerializeField] private float buff = 8f;
+        
         public override void ExtendedInteraction(PlayerBase player)
         {
             PlayerBase otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
 
             if (otherPlayer != null)
             {
-                otherPlayer.computer.AddValue(debuff);
+                otherPlayer.computer.AddValue(buff);
             }
         }
 

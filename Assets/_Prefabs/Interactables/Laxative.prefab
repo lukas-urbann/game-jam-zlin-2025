@@ -111,6 +111,7 @@ MonoBehaviour:
   loadBar: {fileID: 2813613772787650925}
   loadBarFill: {fileID: 6270291192956739566}
   cooldown: 10
+  _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -135,6 +136,8 @@ MonoBehaviour:
   onInteractHoverHide:
     m_PersistentCalls:
       m_Calls: []
+  duration: 999999
+  multiplier: 0.7
 --- !u!114 &6270291192956739566 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8783186276041473283, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}

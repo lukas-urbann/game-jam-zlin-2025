@@ -3,6 +3,16 @@ using UnityEngine;
 
 namespace GJ25.Debuff
 {
+    public static class BuffNames
+    {
+        public const string SLOWNESS = "Slow";
+        public const string LAXNESS = "Lax";
+        public const string POWERSUPPLY = "Ps";
+        public const string COMPUTERSPEED = "ComputerSpeed";
+        public const string STUN = "Stun";
+        public const string BAT = "Bat";
+    }
+    
     public abstract class EffectBase
     {
         public string Name { get; protected set; }
@@ -30,7 +40,7 @@ namespace GJ25.Debuff
             return false;
         }
 
-        protected virtual void OnExpire()
+        public virtual void OnExpire()
         {
         }
     }

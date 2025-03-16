@@ -13,7 +13,6 @@ namespace GJ25.Interactables
         {
             if (player == null) return;
             
-            Debug.Log($"Applying PC speed effect to {player.name}");
             EffectBase speed = new EffectComputerSpeed(duration, multiplier, player);
 
             if (player.computer.malfunctionActive)
@@ -23,8 +22,14 @@ namespace GJ25.Interactables
             else
             {
                 player.computer.AddDebuff(speed);
-
             }
+        }
+
+        public override bool ExtendedCondition(PlayerBase player)
+        {
+            if (player.HasForDebuff(BuffNames.BAT)) return false;
+            
+            return true;
         }
     }
 }

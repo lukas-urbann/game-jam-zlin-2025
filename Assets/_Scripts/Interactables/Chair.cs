@@ -1,3 +1,4 @@
+using GJ25.Debuff;
 using GJ25.Grid;
 using GJ25.Player;
 using UnityEngine;
@@ -32,6 +33,18 @@ namespace GJ25.Interactables
                 GridSystem.Instance.Grid[GridObject.GetGridNode().GridX, GridObject.GetGridNode().GridY].OccupyingObject = null;
                 GridSystem.Instance.Grid[_targetNode.GridX, _targetNode.GridY].OccupyingObject = gameObject;
             }
+        }
+
+        public override bool ExtendedCondition(PlayerBase player)
+        {
+            if (player.HasForDebuff(BuffNames.BAT)) return false;
+            
+            if (player.HasForDebuff(BuffNames.SLOWNESS))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void MoveToTargetNode()

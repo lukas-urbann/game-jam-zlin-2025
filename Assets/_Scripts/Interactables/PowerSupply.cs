@@ -16,11 +16,16 @@ namespace GJ25.Interactables
 
             if (otherPlayer != null)
             {
-                Debug.Log($"Applying pc speed from {player.name} to: {otherPlayer.name}");
-                EffectBase slow = new EffectComputerSpeed(duration, multiplier, otherPlayer);
-                otherPlayer.computer.AddDebuff(slow);
-                otherPlayer.computer.ToggleMalfunction(true);
+                EffectBase ps = new EffectPowerSupply(duration, multiplier, otherPlayer);
+                otherPlayer.computer.AddDebuff(ps);
             }
+        }
+
+        public override bool ExtendedCondition(PlayerBase player)
+        {
+            if (player.HasForDebuff(BuffNames.BAT)) return false;
+            
+            return true;
         }
     }
 }

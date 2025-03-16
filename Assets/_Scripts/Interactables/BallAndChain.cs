@@ -9,17 +9,26 @@ namespace GJ25.Interactables
     {
         [SerializeField] private float duration = 8f;
         [SerializeField] private float multiplier = 0.3f;
+        private PlayerBase otherPlayer;
         
         public override void ExtendedInteraction(PlayerBase player)
         {
-            PlayerBase otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
+            otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
 
             if (otherPlayer != null)
             {
-                Debug.Log($"Applying SlowDebuff from {player.name} to: {otherPlayer.name}");
-                EffectBase slow = new EffectSpeed(duration, multiplier, otherPlayer);
+                EffectBase slow = new EffectSlow(duration, multiplier, otherPlayer);
                 otherPlayer.AddDebuff(slow);
             }
+        }
+
+        public override bool ExtendedCondition(PlayerBase player)
+        {
+            otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
+
+            if (otherPlayer.HasForDebuff(BuffNames.LAXNESS)) return false;
+            if (player.HasForDebuff(BuffNames.BAT)) return false;
+            return true;
         }
     }
 }

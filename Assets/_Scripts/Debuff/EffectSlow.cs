@@ -2,12 +2,12 @@ using GJ25.Player;
 
 namespace GJ25.Debuff
 {
-    public class EffectSpeed : EffectBase
+    public class EffectSlow : EffectBase
     {
         private float speedMultiplier;
 
-        public EffectSpeed(float duration, float speedAmount, PlayerBase player) 
-            : base("Speed", duration, player)
+        public EffectSlow(float duration, float speedAmount, PlayerBase player) 
+            : base(BuffNames.SLOWNESS, duration, player)
         {
             speedMultiplier = speedAmount;
         }
@@ -17,7 +17,7 @@ namespace GJ25.Debuff
             player.SetSpeed(speedMultiplier);
         }
 
-        protected override void OnExpire()
+        public override void OnExpire()
         {
             player.SetSpeed(1);
         }

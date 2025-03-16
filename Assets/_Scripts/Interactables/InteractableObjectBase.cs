@@ -113,11 +113,13 @@ namespace GJ25.Interactables
         public void Interaction(PlayerBase player)
         {
             if (!CanInteract) return;
+            if(!ExtendedCondition(player)) return;
             StartCooldown();
             ExtendedInteraction(player);
         }
 
         public abstract void ExtendedInteraction(PlayerBase player);
+        public abstract bool ExtendedCondition(PlayerBase player);
 
         protected virtual void ExtendedOnEnable()
         {
