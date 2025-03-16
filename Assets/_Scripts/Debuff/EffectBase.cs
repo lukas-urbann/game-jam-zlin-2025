@@ -34,7 +34,6 @@ namespace GJ25.Debuff
         
         public virtual void TrackEffect()
         {
-            EffectTracker.Instance.TrackEffect(Name, Duration, player);
         }
         
 
