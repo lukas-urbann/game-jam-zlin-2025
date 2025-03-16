@@ -52,6 +52,7 @@ namespace GJ25.Player
             Debug.Log("collision enter s " + other.gameObject.name);
             if (other.gameObject.CompareTag("Bat"))
             {
+                CameraShake.Instance.Shake();
                 AddDebuff(new EffectStun(10, this));
             }
         }

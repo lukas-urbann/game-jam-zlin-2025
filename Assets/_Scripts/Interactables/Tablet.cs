@@ -7,16 +7,13 @@ namespace GJ25.Interactables
 {
     public class Tablet : InteractableObjectBase
     {
-        [SerializeField] private float duration = 10f;
         [SerializeField] private float buff = 8f;
         
         public override void ExtendedInteraction(PlayerBase player)
         {
-            PlayerBase otherPlayer = PlayerQuery.players.FirstOrDefault(p => p != player);
-
-            if (otherPlayer != null)
+            if (player != null)
             {
-                otherPlayer.computer.AddValue(buff);
+                player.computer.AddValue(buff);
             }
         }
 

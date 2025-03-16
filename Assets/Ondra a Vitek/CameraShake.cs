@@ -14,7 +14,7 @@ public class CameraShake : MonoBehaviour
         Instance = this;
     }
 
-    private void Shake()
+    public void Shake()
     {
         StartCoroutine(StartShake(duration, magnitude));
     }
