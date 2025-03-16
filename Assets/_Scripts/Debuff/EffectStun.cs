@@ -7,7 +7,6 @@ namespace GJ25.Debuff
         public EffectStun(float duration, PlayerBase player) 
             : base(BuffNames.STUN, duration, player)
         {
-            base.TrackEffect();
         }
 
         public override void ApplyEffect()

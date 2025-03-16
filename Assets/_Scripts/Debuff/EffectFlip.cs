@@ -7,7 +7,6 @@ namespace GJ25.Debuff
         public EffectFlip(float duration, PlayerBase player) 
             : base(BuffNames.FLIP, duration, player)
         {
-            base.TrackEffect();
         }
 
         public override void ApplyEffect()

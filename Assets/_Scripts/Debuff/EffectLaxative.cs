@@ -10,7 +10,6 @@ namespace GJ25.Debuff
             : base(BuffNames.LAXNESS, duration, player)
         {
             speedMultiplier = speedAmount;
-            base.TrackEffect();
         }
 
         public override void ApplyEffect()

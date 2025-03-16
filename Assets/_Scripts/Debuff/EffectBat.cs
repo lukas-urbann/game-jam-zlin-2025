@@ -7,7 +7,6 @@ namespace GJ25.Debuff
         public EffectBat(float duration, PlayerBase player) 
             : base(BuffNames.BAT, duration, player)
         {
-            base.TrackEffect();
         }
 
         public override void ApplyEffect()
