@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+
 namespace GJ25.Player
 {
     public class PlayerComputer : InteractableObjectBase
@@ -39,10 +40,14 @@ namespace GJ25.Player
         public override void ExtendedInteraction(PlayerBase player)
         {
             if (player != playerOwner) return;
-            
+
             if (HasMalfunction)
             {
-                ResetMalfunction();
+                bool isPlayer1 = player.name.Contains("Red"); 
+
+                TypingTest.Instance.StartTypingChallenge(isPlayer1, () => {
+                    ResetMalfunction();
+                });
             }
         }
 

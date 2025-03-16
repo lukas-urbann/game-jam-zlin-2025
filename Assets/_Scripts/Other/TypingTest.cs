@@ -2,17 +2,32 @@
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
+using System;
 
 public class TypingTest: MonoBehaviour
 {
-    public TextMeshProUGUI player1Text; // UI Text pro hráče 1 (WSAD)
-    public TextMeshProUGUI player2Text; // UI Text pro hráče 2 (Arrow keys)
-
-    private string player1Sequence; // Pořadí kláves pro hráče 1
-    private string player2Sequence; // Pořadí kláves pro hráče 2
-
-    private int player1Index = 0; // Kterou klávesu hráč 1 zmáčkl správně
-    private int player2Index = 0; // Kterou klávesu hráč 2 zmáčkl správně
+    public static TypingTest Instance { get; private set; }
+    
+    public TextMeshProUGUI player1Text;
+    public TextMeshProUGUI player2Text;
+    public GameObject typingPanel;
+    
+    private string player1Sequence;
+    private string player2Sequence;
+    
+    private int player1Index = 0;
+    private int player2Index = 0;
+    
+    private Action onPlayer1Success;
+    private Action onPlayer2Success;
+    private bool isActive = false;
+    private bool isPlayer1Active = true;
+    
+    private void Awake()
+    {
+        Instance = this;
+        typingPanel.SetActive(false);
+    }
 
     void Start()
     {
@@ -21,8 +36,13 @@ public class TypingTest: MonoBehaviour
 
     void Update()
     {
-        HandlePlayerInput(ref player1Index, player1Sequence, player1Text, new KeyCode[] { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D });
-        HandlePlayerInput(ref player2Index, player2Sequence, player2Text, new KeyCode[] { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow });
+        if (!isActive) return;
+        if (isPlayer1Active)
+            HandlePlayerInput(ref player1Index, player1Sequence, player1Text, new KeyCode[] 
+                { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D });
+        else
+            HandlePlayerInput(ref player2Index, player2Sequence, player2Text, new KeyCode[] 
+                { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow });
     }
 
     void HandlePlayerInput(ref int currentIndex, string sequence, TextMeshProUGUI text, KeyCode[] keys)
@@ -35,17 +55,28 @@ public class TypingTest: MonoBehaviour
                 {
                     char expectedKey = sequence[currentIndex];
 
-                    if (KeyCodeToChar(key) == expectedKey) // Správně zmáčknutá klávesa
+                    if (KeyCodeToChar(key) == expectedKey)
                     {
                         HighlightKey(currentIndex, sequence, text);
                         currentIndex++;
 
-                        if (currentIndex >= sequence.Length) // Vše správně → skryje text
+                        if (currentIndex >= sequence.Length)
                         {
-                            text.text = "";
+                            text.text = "<color=green>SUCCESS!</color>";
+                            if (isPlayer1Active && onPlayer1Success != null)
+                            {
+                                onPlayer1Success();
+                                Invoke("HidePanel", 1.0f);
+                            }
+                                
+                            else if (!isPlayer1Active && onPlayer2Success != null)
+                            {
+                                onPlayer2Success();
+                                Invoke("HidePanel", 1.0f);
+                            }
                         }
                     }
-                    else // Špatná klávesa → reset
+                    else
                     {
                         ResetSequence(ref currentIndex, sequence, text);
                     }
@@ -54,17 +85,50 @@ public class TypingTest: MonoBehaviour
             }
         }
     }
+    
+    public void StartTypingChallenge(bool isPlayer1, Action successCallback)
+    {
+        isActive = true;
+        isPlayer1Active = isPlayer1;
+        typingPanel.SetActive(true);
+        
+        GenerateNewSequences();
+        player1Index = 0;
+        player2Index = 0;
+        player1Text.gameObject.SetActive(isPlayer1);
+        player2Text.gameObject.SetActive(!isPlayer1);
+        
+        Debug.Log("Player 1 text: " + player1Text.text);
+        Debug.Log("Player 2 text: " + player2Text.text);
+        
+        if (isPlayer1)
+        {
+            onPlayer1Success = successCallback;
+            onPlayer2Success = null;
+        }
+        else
+        {
+            onPlayer2Success = successCallback;
+            onPlayer1Success = null;
+        }
+        
+        player1Index = 0;
+        player2Index = 0;
+    }
+    
+    private void HidePanel()
+    {
+        typingPanel.SetActive(false);
+        isActive = false;
+    }
 
     void GenerateNewSequences()
     {
         player1Sequence = ShuffleString("WSAD");
-        player2Sequence = ShuffleString("↑↓←→"); // Arrow symbols
-
+        player2Sequence = ShuffleString("↑↓←→");
+        
         player1Text.text = player1Sequence;
         player2Text.text = player2Sequence;
-
-        player1Index = 0;
-        player2Index = 0;
     }
 
     void HighlightKey(int index, string sequence, TextMeshProUGUI text)
@@ -85,12 +149,12 @@ public class TypingTest: MonoBehaviour
     void ResetSequence(ref int currentIndex, string sequence, TextMeshProUGUI text)
     {
         currentIndex = 0;
-        text.text = sequence; // Reset textu
+        text.text = sequence;
     }
 
     string ShuffleString(string input)
     {
-        return new string(input.ToCharArray().OrderBy(x => Random.value).ToArray());
+        return new string(input.ToCharArray().OrderBy(x => UnityEngine.Random.value).ToArray());
     }
 
     char KeyCodeToChar(KeyCode key)
