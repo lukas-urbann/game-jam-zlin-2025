@@ -15,6 +15,7 @@ namespace GJ25.Interactables
 
             if (otherPlayer != null)
             {
+                Debug.Log($"beer flip from {player.name} to {otherPlayer.name}");
                 EffectBase flip = new EffectFlip(duration, otherPlayer);
                 otherPlayer.AddDebuff(flip);
             }
