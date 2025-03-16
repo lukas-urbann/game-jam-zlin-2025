@@ -7,9 +7,10 @@ namespace GJ25.Scenes
     {
         public void ChangeScene(int name)
         {
-            SceneManager.LoadScene(name);
+            Time.timeScale = 1;
+            SceneManager.LoadScene(name,LoadSceneMode.Single);
         }
-
+        
         public void EndApp()
         {
             Application.Quit();

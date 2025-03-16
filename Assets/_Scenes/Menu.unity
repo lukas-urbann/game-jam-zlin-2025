@@ -2747,6 +2747,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2936346572712842292, guid: 75e3b1f419d8a5240ab7c85e22b2aa41, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: GameFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936346572712842292, guid: 75e3b1f419d8a5240ab7c85e22b2aa41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}

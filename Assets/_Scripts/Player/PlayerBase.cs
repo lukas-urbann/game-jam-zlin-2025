@@ -49,7 +49,6 @@ namespace GJ25.Player
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("collision enter s " + other.gameObject.name);
             if (other.gameObject.CompareTag("Bat"))
             {
                 CameraShake.Instance.Shake();
@@ -60,12 +59,11 @@ namespace GJ25.Player
         private void OnEnable()
         {
             PlayerQuery.players.Add(this);
-            
             if (TryGetComponent(out GridObject go)) _currentNode = go;
             if (TryGetComponent(out PlayerControls ct)) _controls = ct;
             if (TryGetComponent(out Animator anim)) _animator = anim;
         }
-        
+
         private void Start()
         {
             _initialSpeed = moveSpeed;
