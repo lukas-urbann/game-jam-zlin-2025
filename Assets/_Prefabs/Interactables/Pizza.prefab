@@ -149,7 +149,7 @@ MonoBehaviour:
   modelObject: {fileID: 9030451353861303557}
   loadBar: {fileID: 1547244626043347017}
   loadBarFill: {fileID: 7311471424314011338}
-  cooldown: 10
+  cooldown: 22
   _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:

@@ -198,7 +198,7 @@ MonoBehaviour:
   modelObject: {fileID: 2833852105542017427}
   loadBar: {fileID: 8643338504324058454}
   loadBarFill: {fileID: 575392974777926613}
-  cooldown: 10
+  cooldown: 12
   _animator: {fileID: 0}
   onInteract:
     m_PersistentCalls:
@@ -224,7 +224,7 @@ MonoBehaviour:
   onInteractHoverHide:
     m_PersistentCalls:
       m_Calls: []
-  buff: 8
+  buff: 10
 --- !u!4 &4678976164781922819 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}

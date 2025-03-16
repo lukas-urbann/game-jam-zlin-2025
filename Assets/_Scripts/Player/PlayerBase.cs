@@ -53,7 +53,7 @@ namespace GJ25.Player
             if (other.gameObject.CompareTag("Bat"))
             {
                 CameraShake.Instance.Shake();
-                AddDebuff(new EffectStun(10, this));
+                AddDebuff(new EffectStun(3.5f, this));
             }
         }
 
