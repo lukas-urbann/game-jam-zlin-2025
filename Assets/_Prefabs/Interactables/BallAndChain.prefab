@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.898463
+      value: 3.8984628
       objectReference: {fileID: 0}
     - target: {fileID: 4537097027677709525, guid: 7959a6a883340d84e8fdc2b244e82989, type: 3}
       propertyPath: m_LocalRotation.w
@@ -190,18 +190,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1721877433695206487}
-        m_TargetAssemblyTypeName: GJ25.Audio.AudioCall, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ballInteract
           m_BoolArgument: 0
         m_CallState: 2
   onInteractHoverShow:

@@ -52,7 +52,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: virusInteract
-    clip: {fileID: 8300000, guid: 4802e01bb8c725748b7a114a8f3e0e19, type: 3}
+    clip: {fileID: 8300000, guid: 48006f1cf79c716469fdb508ebed1976, type: 3}
     volume: 0.697
     pitch: 1
     loop: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: ballInteract
+  - name: ball
     clip: {fileID: 8300000, guid: 3a80559de3ec10e4bac2e86b5c7aa8b4, type: 3}
     volume: 0.746
     pitch: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: powerSupplyInteract
-    clip: {fileID: 8300000, guid: e54853305d79b33469c3a4835f98575c, type: 3}
+    clip: {fileID: 8300000, guid: 5939cc9353756804db5a19868cac18e0, type: 3}
     volume: 0.746
     pitch: 1
     loop: 0
@@ -143,6 +143,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: playerStep5
     clip: {fileID: 8300000, guid: 9f2ca45e26f2d104eb992a30f41284d2, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: baseballInteract
+    clip: {fileID: 8300000, guid: 2ad748b4d5d1faa48be4a4872d333ee3, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tabletInteract
+    clip: {fileID: 8300000, guid: da27497bcf7a4464098e563e8db3713d, type: 3}
+    volume: 0.746
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: victory
+    clip: {fileID: 8300000, guid: 00ecebd5073a1714b9482912919dded2, type: 3}
     volume: 0.746
     pitch: 1
     loop: 0
