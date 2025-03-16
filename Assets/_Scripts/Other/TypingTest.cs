@@ -62,7 +62,7 @@ public class TypingTest: MonoBehaviour
 
                         if (currentIndex >= sequence.Length)
                         {
-                            text.text = "<color=green>SUCCESS!</color>";
+                            text.text = "<color=green>SUCCESS</color>";
                             if (isPlayer1Active && onPlayer1Success != null)
                             {
                                 onPlayer1Success();
