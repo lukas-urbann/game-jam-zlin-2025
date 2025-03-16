@@ -666,6 +666,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7898703639910328375, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
+      propertyPath: aCall
+      value: 
+      objectReference: {fileID: 7974575432150180744}
+    - target: {fileID: 7898703639910328375, guid: fa8cb9d03ddaae34a8bf66abaf76fa61, type: 3}
       propertyPath: baseballBat
       value: 
       objectReference: {fileID: 1227901779817292265}
