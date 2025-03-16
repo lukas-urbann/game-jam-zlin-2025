@@ -20,7 +20,7 @@ namespace GJ25.Player
         private float _currentSpeed;
         private float _initialSpeed = 1;
 
-        public ParticleSystem malfunction;
+        public GameObject malfunction;
         protected bool HasMalfunction = false;
         public bool malfunctionActive => HasMalfunction;
         
@@ -137,15 +137,7 @@ namespace GJ25.Player
         public void ToggleMalfunction(bool toggle)
         {
             HasMalfunction = toggle;
-            switch (toggle)
-            {
-                case true:
-                    malfunction.Play();
-                    break;
-                default :
-                    malfunction.Stop();
-                    break;
-            }
+            malfunction.SetActive(toggle);
         }
 
         private void CheckEffects()

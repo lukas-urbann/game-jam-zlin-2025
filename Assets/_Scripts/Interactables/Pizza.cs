@@ -22,6 +22,7 @@ namespace GJ25.Interactables
             else
             {
                 player.computer.AddDebuff(speed);
+                player.AddDebuff(new EffectComputerSpeed(duration, 1, player));
             }
         }
 

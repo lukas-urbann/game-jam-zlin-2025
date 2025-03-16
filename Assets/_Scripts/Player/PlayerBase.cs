@@ -32,6 +32,8 @@ namespace GJ25.Player
         public GameObject slownessIndicator;
         public GameObject laxativeIndicator;
         public GameObject starsIndicator;
+        public GameObject drunkIndicator;
+        public GameObject pizzaIndicator;
         public GameObject baseballBat;
 
         public PlayerControls Controls => _controls;
@@ -127,7 +129,12 @@ namespace GJ25.Player
                 case BuffNames.BAT:
                     baseballBat.SetActive(true);
                     break;
-                
+                case BuffNames.FLIP:
+                    drunkIndicator.SetActive(true);
+                    break;
+                case BuffNames.COMPUTERSPEED:
+                    pizzaIndicator.SetActive(true);
+                    break;
             }
 
             effect.ApplyEffect();
@@ -154,6 +161,12 @@ namespace GJ25.Player
                     break;
                 case BuffNames.BAT:
                     baseballBat.SetActive(false);
+                    break;
+                case BuffNames.FLIP:
+                    drunkIndicator.SetActive(false);
+                    break;
+                case BuffNames.COMPUTERSPEED:
+                    pizzaIndicator.SetActive(false);
                     break;
             }
             activeEffects.RemoveAt(effectIndex);
