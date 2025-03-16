@@ -417,7 +417,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   duration: 10
-  debuff: -25
+  debuff: -20
 --- !u!114 &5591580041928256028
 MonoBehaviour:
   m_ObjectHideFlags: 0
