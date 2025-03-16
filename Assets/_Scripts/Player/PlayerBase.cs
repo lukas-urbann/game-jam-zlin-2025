@@ -58,7 +58,6 @@ namespace GJ25.Player
 
         private void OnEnable()
         {
-            PlayerQuery.instance.players.Add(this);
             if (TryGetComponent(out GridObject go)) _currentNode = go;
             if (TryGetComponent(out PlayerControls ct)) _controls = ct;
             if (TryGetComponent(out Animator anim)) _animator = anim;
@@ -71,6 +70,12 @@ namespace GJ25.Player
 
         private void Update()
         {
+            if (!PlayerQuery.instance.players.Contains(this)) //jebat to už fakt
+            {
+                PlayerQuery.instance.players.Add(this);
+            }
+            
+            
             CheckStates();
             CheckEffects();
         }
