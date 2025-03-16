@@ -11,6 +11,7 @@ namespace GJ25.Debuff
         public const string COMPUTERSPEED = "ComputerSpeed";
         public const string STUN = "Stun";
         public const string BAT = "Bat";
+        public const string FLIP = "Flip";
     }
     
     public abstract class EffectBase
